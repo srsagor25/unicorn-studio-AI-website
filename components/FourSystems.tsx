@@ -63,7 +63,7 @@ export default function FourSystems() {
   return (
     <section
       id="systems"
-      className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white"
+      className="pt-12 sm:pt-16 lg:pt-20 pb-8 sm:pb-10 lg:pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white"
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10 sm:mb-12 lg:mb-14">
@@ -166,16 +166,27 @@ export default function FourSystems() {
           ))}
         </div>
 
-        <div className="text-center mt-14 sm:mt-16 lg:mt-20">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mt-10 sm:mt-12 lg:mt-14">
           <Link
             href="/ai-systems"
-            className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all duration-300"
+            className="btn-primary group inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 text-white rounded-xl font-semibold text-[15px] sm:text-base"
           >
-            <span>See all four systems in detail</span>
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <span className="relative z-10">See all four systems in detail</span>
+            <svg
+              className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </Link>
+          <a
+            href="#contact"
+            className="btn-secondary inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 bg-white text-gray-900 rounded-xl font-semibold text-[15px] sm:text-base border border-gray-300"
+          >
+            Talk to us first
+          </a>
         </div>
       </div>
     </section>

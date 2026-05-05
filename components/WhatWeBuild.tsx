@@ -59,33 +59,16 @@ export default function WhatWeBuild() {
   ];
 
   return (
-    <section id="services" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="services" className="pt-6 sm:pt-8 lg:pt-10 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10 sm:mb-12 lg:mb-14">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs sm:text-sm font-semibold mb-6 sm:mb-7">
-            Services
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-5 sm:mb-7 tracking-[-0.02em] px-4 max-w-4xl mx-auto leading-[1.1]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-5 sm:mb-7 tracking-[-0.02em] px-4 max-w-4xl mx-auto leading-[1.1] text-balance">
             What we <span className="gradient-text-modern">build.</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-[1.6] px-4">
-            Three AI services and four product builds. Pick the one that fits, or let us help you choose.
+          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-[1.6] px-4 text-pretty">
+            Pick the one that fits, or let us help you choose.
           </p>
-          <div className="mt-8 sm:mt-9 flex flex-wrap justify-center gap-2 px-4">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-[11px] sm:text-xs font-semibold">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
-              AI · 3 services
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-[11px] sm:text-xs font-semibold">
-              <span className="w-1.5 h-1.5 rounded-full bg-indigo-600" />
-              Product · 3 builds
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-50 border border-purple-100 text-purple-700 text-[11px] sm:text-xs font-semibold">
-              <span className="w-1.5 h-1.5 rounded-full bg-purple-600" />
-              Brand · 1 service
-            </span>
-          </div>
         </div>
 
         {/* Mobile Accordion View */}
@@ -201,13 +184,6 @@ export default function WhatWeBuild() {
                     }`}>
                       {service.name}
                     </h3>
-                    <span className={`hidden xl:inline-block px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider ${
-                      activeService === index
-                        ? "bg-white/20 text-white"
-                        : "bg-gray-100 text-gray-500"
-                    }`}>
-                      {service.category}
-                    </span>
                   </div>
                   <svg
                     className={`w-6 h-6 transition-transform duration-300 ${
@@ -234,9 +210,6 @@ export default function WhatWeBuild() {
               />
 
               <div className="relative z-10 w-full">
-                <span className="inline-block px-2.5 py-1 rounded-full bg-blue-100 text-blue-700 text-[10px] font-bold uppercase tracking-[0.18em] mb-5">
-                  {services[activeService].category}
-                </span>
                 <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 tracking-[-0.01em] leading-[1.15]">
                   {services[activeService].name}
                 </h3>

@@ -26,6 +26,52 @@ interface Project {
 
 export const projects: Project[] = [
   {
+    name: "AI Marketing System · B2B SaaS",
+    description:
+      "How a B2B SaaS founder reclaimed 12 hours a week by rebuilding the content engine.",
+    stats: "Built in 4 weeks · LinkedIn + X + Reddit + Blog · Voice-trained AI",
+    tags: ["AI Systems", "Marketing Automation", "Content Engine"],
+    image: "/b2b-saas-case-study.svg",
+    gradientStyle: "linear-gradient(135deg, #0f172a, #1e3a8a, #312e81)",
+    caseStudy: {
+      overview:
+        "A founder-led B2B SaaS company. Founder writing all original content. A three-person marketing team manually adapting and republishing across LinkedIn, X, and the company blog. Reddit experiments abandoned for lack of bandwidth. Facebook and Instagram presence inconsistent.",
+      challenge:
+        "The founder was the content engine. Every piece started as a long-form post they wrote, then disappeared into 14+ hours of weekly manual adaptation across channels. Quality was uneven. LinkedIn got the best version. Everything else got an afterthought.",
+      result:
+        "A voice-trained AI system that cut founder content time from 14 hours to 2 hours a week, tripled output across channels, relaunched the abandoned Reddit channel in a Reddit-native voice, and doubled long-form output to two posts per week.",
+      techStack: ["Voice-trained AI", "Existing CMS", "Social schedulers", "Analytics"],
+      timeline: [
+        {
+          day: "Week 1",
+          title: "Voice training corpus",
+          description:
+            "Audited 200+ existing founder posts across 18 months. Built a fine-tuning corpus that captured tone, cadence, structure, and signature phrasing rather than just generic copy.",
+        },
+        {
+          day: "Week 2",
+          title: "One-input, multi-output engine",
+          description:
+            "Founder writes once (or speaks once into a voice memo). The system produces platform-native versions for LinkedIn, X threads, Facebook, Instagram, and a Reddit-appropriate variant.",
+        },
+        {
+          day: "Week 3",
+          title: "Reddit-native module + approval queue",
+          description:
+            "Built a Reddit-specific rewrite that avoids promotional voice, plus an approval queue so the founder reviews and signs off on every piece before it ships.",
+        },
+        {
+          day: "Week 4",
+          title: "Performance dashboard & launch",
+          description:
+            "Engagement, conversion, and time-saved tracked in one view. Side-by-side QA against historical posts, then full handoff to the marketing team.",
+        },
+      ],
+      quote:
+        "We trained the AI on too narrow a sample of the founder's writing initially (his last 6 months only), which made the voice slightly stale. Re-trained on a wider 18-month sample in week 5 and quality jumped notably.",
+    },
+  },
+  {
     name: "AI Communication System · D2C Skincare Brand",
     description: "How a D2C brand recovered ~30% of lost leads in 60 days, without adding a single salesperson.",
     stats: "Built in 5 weeks · WhatsApp + IG + Email · CRM enrichment",
