@@ -40,8 +40,8 @@ export default function Hero() {
         <div className="text-center">
           {/* Main heading */}
           <h1 className="text-[2.6rem] sm:text-6xl md:text-7xl lg:text-[5rem] font-bold text-gray-900 leading-[1.05] tracking-[-0.02em] mb-6 sm:mb-7 max-w-4xl mx-auto text-balance">
-            Custom AI systems,{" "}
-            <span className="gradient-text-modern">built and running</span> in your business.
+            Integrate AI into your business{" "}
+            <span className="gradient-text-modern">before your competitor does.</span>
           </h1>
 
           {/* Subheading — two tight sentences */}
