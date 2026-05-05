@@ -4,8 +4,8 @@ export default function Footer() {
   const navigation = {
     services: [
       { name: "AI Systems", href: "/ai-systems" },
-      { name: "AI Solutions", href: "/ai-solutions" },
       { name: "AI Integrations", href: "/ai-integrations" },
+      { name: "AI Solutions", href: "/ai-solutions" },
       { name: "SaaS Products", href: "/saas-products" },
       { name: "Mobile Apps", href: "/mobile-apps" },
       { name: "Product Websites", href: "/product-websites" },
@@ -14,7 +14,7 @@ export default function Footer() {
     company: [
       { name: "About", href: "/about" },
       { name: "Portfolio", href: "/#portfolio" },
-      { name: "Case Studies", href: "/#case-studies" },
+      { name: "Case Studies", href: "/case-studies" },
       { name: "Process", href: "/#process" },
       { name: "FAQ", href: "/#faq" },
     ],

@@ -5,8 +5,7 @@ import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 
 export default function TopNavigation() {
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [scrolled, setScrolled] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [desktopServicesOpen, setDesktopServicesOpen] = useState(false);
@@ -15,22 +14,13 @@ export default function TopNavigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      const isMobile = window.innerWidth < 768;
-
-      if (isMobile) {
-        setIsVisible(true);
-      } else if (currentScrollY < lastScrollY || currentScrollY < 100) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-      setLastScrollY(currentScrollY);
+      setScrolled(window.scrollY > 10);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   // Lock body scroll when sidebar is open
   useEffect(() => {
@@ -62,8 +52,8 @@ export default function TopNavigation() {
 
   const serviceLinks = [
     { name: "AI Systems", href: "/ai-systems", description: "Custom AI automation built for your business" },
-    { name: "AI Solutions", href: "/ai-solutions", description: "Intelligent products that solve real problems" },
     { name: "AI Integrations", href: "/ai-integrations", description: "Add AI to your existing product" },
+    { name: "AI Solutions", href: "/ai-solutions", description: "Intelligent products that solve real problems" },
     { name: "SaaS Products", href: "/saas-products", description: "From first commit to full-scale SaaS" },
     { name: "Mobile Apps", href: "/mobile-apps", description: "Native and cross-platform mobile apps" },
     { name: "Product Websites", href: "/product-websites", description: "High-converting marketing sites" },
@@ -72,19 +62,19 @@ export default function TopNavigation() {
 
   const menuLinks = [
     { name: "Portfolio", href: "/#portfolio" },
-    { name: "Case Studies", href: "/#case-studies" },
+    { name: "Case Studies", href: "/case-studies" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/#contact" },
   ];
 
   return (
     <>
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isVisible ? "translate-y-0" : "-translate-y-full"
-        }`}
-      >
-        <div className="bg-white/80 backdrop-blur-xl border-b border-gray-200/50 shadow-sm">
+      <nav className="fixed top-0 left-0 right-0 z-50">
+        <div
+          className={`bg-white/80 backdrop-blur-xl border-b border-gray-200/50 transition-shadow duration-300 ${
+            scrolled ? "shadow-md" : "shadow-sm"
+          }`}
+        >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-14 sm:h-16">
               {/* Logo/Brand */}

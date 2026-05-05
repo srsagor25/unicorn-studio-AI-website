@@ -24,7 +24,7 @@ export default function AboutPage() {
       number: "Belief 03",
       title: "You should own what we build.",
       description:
-        "No proprietary lock-in. No black boxes. Every workflow, prompt, and integration we build is yours forever — even if you fire us.",
+        "No proprietary lock-in. No black boxes. Every workflow, prompt, and integration we build is yours forever, even if you fire us.",
     },
     {
       number: "Belief 04",
@@ -46,7 +46,7 @@ export default function AboutPage() {
       number: "01",
       title: "We take fewer clients on purpose.",
       description:
-        "Every system is custom-built. We cap onboarding so quality never slips. If we're full, we'll tell you and put you on the waitlist — we won't take your money and short-staff your build.",
+        "Every system is custom-built. We cap onboarding so quality never slips. If we're full, we'll tell you and put you on the waitlist. We won't take your money and short-staff your build.",
     },
     {
       number: "02",
@@ -64,7 +64,7 @@ export default function AboutPage() {
       number: "04",
       title: "We're not the cheapest.",
       description:
-        "We're not trying to be. Custom builds, ongoing maintenance, real specialists, real guarantees — that costs more than templates and offshore subcontractors. We think the math still works.",
+        "We're not trying to be. Custom builds, ongoing maintenance, real specialists, real guarantees: that costs more than templates and offshore subcontractors. We think the math still works.",
     },
   ];
 
@@ -123,10 +123,10 @@ export default function AboutPage() {
               </div>
               <div className="space-y-5 text-gray-700 text-base sm:text-lg leading-relaxed">
                 <p>
-                  We didn&apos;t start as an AI company. We started as systems builders — the kind of work that, before AI, meant Zapier integrations, custom scripts, and a lot of duct tape between tools that refused to cooperate. The work was useful but slow. The ceiling was low.
+                  We didn&apos;t start as an AI company. We started as systems builders. The kind of work that, before AI, meant Zapier integrations, custom scripts, and a lot of duct tape between tools that refused to cooperate. The work was useful but slow. The ceiling was low.
                 </p>
                 <p>
-                  Then AI arrived. Not the demo-day version. The version that could actually hold a conversation, follow instructions, and operate inside real business workflows. Suddenly the systems we&apos;d been building got dramatically more capable — and the businesses installing them got dramatically more leverage.
+                  Then AI arrived. Not the demo-day version. The version that could actually hold a conversation, follow instructions, and operate inside real business workflows. Suddenly the systems we&apos;d been building got dramatically more capable, and the businesses installing them got dramatically more leverage.
                 </p>
                 <p>
                   We watched a wave of agencies appear in 2024, branded around AI but missing the systems thinking that makes it actually work.{" "}
@@ -268,7 +268,7 @@ export default function AboutPage() {
               <span className="text-blue-200">is to talk.</span>
             </h2>
             <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-              30 minutes. No pitch. You walk us through your business — we tell you honestly whether AI systems would help, which ones, and whether we&apos;re the right team to build them. You leave with a written process map either way.
+              30 minutes. No pitch. You walk us through your business and we tell you honestly whether AI systems would help, which ones, and whether we&apos;re the right team to build them. You leave with a written process map either way.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button

@@ -9,45 +9,52 @@ export default function WhatWeBuild() {
   const services = [
     {
       name: "AI Systems",
-      description: "Custom AI infrastructure that automates the manual, repetitive work in your business. Process automation, marketing, sales, and communication systems — built around your operations, not a template.",
+      category: "AI",
+      description: "Custom AI infrastructure that automates the manual, repetitive work in your business. Process automation, marketing, sales, and communication systems built around your operations, not a template.",
       link: "/ai-systems",
       linkText: "Explore AI Systems"
     },
     {
-      name: "SaaS Products",
-      description: "From first commit to full-scale SaaS. We build, test, and launch alongside you.",
-      link: "/saas-products",
-      linkText: "Explore SaaS Products"
+      name: "AI Integrations",
+      category: "AI",
+      description: "Enhance your existing products with AI capabilities. OpenAI, Claude, Gemini, or custom models. We integrate intelligence where it matters most.",
+      link: "/ai-integrations",
+      linkText: "Explore AI Integrations"
     },
     {
       name: "AI Solutions",
+      category: "AI",
       description: "Custom AI implementations that solve real business problems. From intelligent automation to predictive analytics, we make AI work for your specific use case.",
       link: "/ai-solutions",
       linkText: "Explore AI Solutions"
     },
     {
-      name: "AI Integrations",
-      description: "Enhance your existing products with AI capabilities. OpenAI, Claude, Gemini, or custom models - we integrate intelligence where it matters most.",
-      link: "/ai-integrations",
-      linkText: "Explore AI Integrations"
+      name: "SaaS Products",
+      category: "Product",
+      description: "From first commit to full-scale SaaS. We build, test, and launch alongside you.",
+      link: "/saas-products",
+      linkText: "Explore SaaS Products"
     },
     {
       name: "Mobile Apps",
-      description: "Native and cross-platform apps that users love. iOS, Android, or React Native - we choose the right approach for your audience and budget.",
+      category: "Product",
+      description: "Native and cross-platform apps that users love. iOS, Android, or React Native. We choose the right approach for your audience and budget.",
       link: "/mobile-apps",
       linkText: "Explore Mobile Apps"
     },
     {
       name: "Product Websites",
+      category: "Product",
       description: "High-converting web experiences that tell your story. From landing pages to full marketing sites, designed to turn visitors into customers.",
       link: "/product-websites",
       linkText: "Explore Product Websites"
     },
     {
-      name: "Brand Identity",
-      description: "Strategic branding that sets you apart. Logo, visual system, messaging - we create brands that resonate with your target market.",
+      name: "Branding",
+      category: "Brand",
+      description: "Strategic brand identity that sets you apart. Logo, visual system, and messaging that resonate with your target market.",
       link: "/branding",
-      linkText: "Explore Brand Identity"
+      linkText: "Explore Branding"
     },
   ];
 
@@ -55,10 +62,30 @@ export default function WhatWeBuild() {
     <section id="services" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 tracking-tight">
-            What We Build
+        <div className="text-center mb-10 sm:mb-14 lg:mb-16">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+            Services
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-5 tracking-tight px-4 max-w-4xl mx-auto leading-[1.1]">
+            What we <span className="gradient-text-modern">build.</span>
           </h2>
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto font-light px-4">
+            Three AI services and four product builds. Pick the one that fits, or let us help you choose.
+          </p>
+          <div className="mt-6 sm:mt-7 flex flex-wrap justify-center gap-2 px-4">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-[11px] sm:text-xs font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
+              AI · 3 services
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-[11px] sm:text-xs font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-indigo-600" />
+              Product · 3 builds
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-50 border border-purple-100 text-purple-700 text-[11px] sm:text-xs font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-purple-600" />
+              Brand · 1 service
+            </span>
+          </div>
         </div>
 
         {/* Mobile Accordion View */}
@@ -160,12 +187,28 @@ export default function WhatWeBuild() {
                     : "bg-white border-2 border-gray-200 text-gray-900 hover:border-blue-500 hover:shadow-lg"
                 }`}
               >
-                <div className="flex items-center justify-between">
-                  <h3 className={`text-xl font-bold ${
-                    activeService === index ? "text-white" : "text-gray-900"
-                  }`}>
-                    {service.name}
-                  </h3>
+                <div className="flex items-center justify-between gap-4">
+                  <div className="flex items-center gap-3">
+                    <span className={`inline-flex items-center justify-center w-7 h-7 rounded-md text-[11px] font-bold tracking-tight ${
+                      activeService === index
+                        ? "bg-white/20 text-white"
+                        : "bg-gray-100 text-gray-500"
+                    }`}>
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className={`text-xl font-bold ${
+                      activeService === index ? "text-white" : "text-gray-900"
+                    }`}>
+                      {service.name}
+                    </h3>
+                    <span className={`hidden xl:inline-block px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider ${
+                      activeService === index
+                        ? "bg-white/20 text-white"
+                        : "bg-gray-100 text-gray-500"
+                    }`}>
+                      {service.category}
+                    </span>
+                  </div>
                   <svg
                     className={`w-6 h-6 transition-transform duration-300 ${
                       activeService === index ? "text-white rotate-90" : "text-gray-400"

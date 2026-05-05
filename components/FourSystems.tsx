@@ -6,11 +6,12 @@ export default function FourSystems() {
   const systems = [
     {
       number: "01",
-      badge: "Our Specialty",
+      label: "Our specialty",
       isMain: true,
       title: "AI Business Process Automation",
       description:
-        "Onboarding, approvals, reporting, internal agents, tool integrations — anything manual and repetitive in your operations. The work that shouldn't need a person, finally doesn't.",
+        "Onboarding, approvals, reporting, internal agents, tool integrations. Anything manual and repetitive in your operations. The work that shouldn't need a person, finally doesn't.",
+      keywords: ["Onboarding", "Approvals", "Reporting", "Internal agents"],
       icon: (
         <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
@@ -20,10 +21,10 @@ export default function FourSystems() {
     },
     {
       number: "02",
-      tag: "for example",
       title: "AI Marketing Systems",
       description:
-        "Social media automation across LinkedIn, Facebook, Instagram, X, Reddit — plus email marketing engines that segment, send, and follow up on autopilot.",
+        "Social automation across LinkedIn, Facebook, Instagram, X and Reddit. Email engines that segment, send, and follow up on autopilot.",
+      keywords: ["Social", "Email", "Content", "Distribution"],
       icon: (
         <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
@@ -32,10 +33,10 @@ export default function FourSystems() {
     },
     {
       number: "03",
-      tag: "for example",
       title: "AI Sales Systems",
       description:
-        "Lead qualification, follow-up automation, pipeline routing, sales-handoff flows. Stop letting warm leads go cold.",
+        "Lead qualification, follow-up automation, pipeline routing, and sales-handoff flows. Stop letting warm leads go cold.",
+      keywords: ["Qualification", "Follow-up", "Routing", "CRM"],
       icon: (
         <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
@@ -44,10 +45,10 @@ export default function FourSystems() {
     },
     {
       number: "04",
-      tag: "for example",
       title: "AI Communication Automation",
       description:
-        "WhatsApp, Discord, and Slack workflows. Conversational AI that responds, qualifies, routes, and escalates across every messaging channel your business runs on.",
+        "WhatsApp, Discord, and Slack workflows. Conversational AI that responds, qualifies, routes, and escalates across every channel your business runs on.",
+      keywords: ["WhatsApp", "Slack", "Discord", "Inbox"],
       icon: (
         <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -56,10 +57,16 @@ export default function FourSystems() {
     },
   ];
 
+  const featured = systems[0];
+  const rest = systems.slice(1);
+
   return (
-    <section id="systems" className="py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
+    <section
+      id="systems"
+      className="py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white"
+    >
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+        <div className="text-center mb-10 sm:mb-14 lg:mb-16">
           <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs sm:text-sm font-medium mb-4 sm:mb-6">
             The Four Systems
           </div>
@@ -68,70 +75,98 @@ export default function FourSystems() {
             <span className="gradient-text-modern"> Built around your business,</span> not a template.
           </h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto font-light px-4">
-            We don&apos;t pick from a menu. You tell us about your business — we tell you which systems you actually need.
+            We don&apos;t pick from a menu. You tell us about your business, and we map out exactly which systems you actually need.
           </p>
         </div>
 
-        <div className="space-y-4 sm:space-y-6">
-          {systems.map((sys, index) => (
-            <div
-              key={index}
-              className={`group relative grid grid-cols-1 md:grid-cols-[80px_1fr_auto] gap-6 lg:gap-10 items-start p-6 sm:p-8 lg:p-10 rounded-2xl border-2 transition-all duration-300 overflow-hidden ${
-                sys.isMain
-                  ? "bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-700 border-blue-500 text-white shadow-2xl shadow-blue-500/20"
-                  : "bg-white border-gray-200 hover:border-gray-900"
-              }`}
-            >
-              {/* Animated blue border at top (non-main) */}
-              {!sys.isMain && (
-                <div className="absolute top-0 left-0 h-1.5 w-full bg-blue-600 transform translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-out rounded-t-2xl" />
-              )}
+        {/* Featured: Our specialty */}
+        <article className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-700 via-blue-700 to-indigo-700 text-white shadow-2xl shadow-blue-600/25 mb-6 sm:mb-8">
+          {/* Decorative glow */}
+          <div className="pointer-events-none absolute -top-32 -right-32 w-[420px] h-[420px] rounded-full bg-cyan-400/20 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-32 -left-32 w-[420px] h-[420px] rounded-full bg-indigo-400/20 blur-3xl" />
+          {/* Subtle grid */}
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#ffffff14_1px,transparent_1px),linear-gradient(to_bottom,#ffffff14_1px,transparent_1px)] bg-[size:48px_48px] opacity-40" />
 
-              {/* Number */}
-              <div className={`text-5xl lg:text-6xl font-bold leading-none ${
-                sys.isMain ? "text-white/40" : "text-blue-600/30"
-              }`}>
-                {sys.number}.
-              </div>
-
-              {/* Content */}
-              <div className="relative z-10">
-                {sys.badge && (
-                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-white text-xs font-bold uppercase tracking-wider mb-4 backdrop-blur-sm">
-                    <span className="w-1.5 h-1.5 rounded-full bg-white" />
-                    {sys.badge}
-                  </span>
-                )}
-                {sys.tag && (
-                  <span className="inline-block px-3 py-1 rounded-full bg-gray-100 text-gray-500 text-xs font-semibold uppercase tracking-wider mb-4">
-                    — {sys.tag}
-                  </span>
-                )}
-                <h3 className={`text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 leading-tight ${
-                  sys.isMain ? "text-white" : "text-gray-900"
-                }`}>
-                  {sys.title}
-                </h3>
-                <p className={`text-sm sm:text-base leading-relaxed max-w-2xl ${
-                  sys.isMain ? "text-blue-50" : "text-gray-600"
-                }`}>
-                  {sys.description}
-                </p>
-              </div>
-
-              {/* Icon */}
-              <div className={`hidden md:flex items-center justify-center w-32 h-32 rounded-2xl ${
-                sys.isMain
-                  ? "bg-white/10 text-white border border-white/20"
-                  : "bg-gradient-to-br from-blue-50 to-indigo-50 text-blue-600 border border-blue-100"
-              }`}>
-                {sys.icon}
+          <div className="relative grid grid-cols-1 lg:grid-cols-[auto_1fr_auto] gap-6 lg:gap-12 items-center p-6 sm:p-10 lg:p-12">
+            {/* Number column */}
+            <div className="flex lg:flex-col items-baseline lg:items-start gap-3">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-white text-[11px] font-bold uppercase tracking-[0.18em] backdrop-blur-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-300" />
+                {featured.label}
+              </span>
+              <div className="text-6xl lg:text-7xl font-black leading-none text-white/30 lg:mt-4">
+                {featured.number}
               </div>
             </div>
+
+            {/* Content */}
+            <div>
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight mb-3 sm:mb-4">
+                {featured.title}
+              </h3>
+              <p className="text-sm sm:text-base lg:text-lg text-blue-50/90 leading-relaxed max-w-2xl mb-5 sm:mb-6">
+                {featured.description}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {featured.keywords.map((k, i) => (
+                  <span
+                    key={i}
+                    className="px-3 py-1 rounded-full bg-white/10 border border-white/15 text-[11px] sm:text-xs font-medium text-white/90 backdrop-blur-sm"
+                  >
+                    {k}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Icon */}
+            <div className="hidden lg:flex items-center justify-center w-32 h-32 rounded-2xl bg-white/10 border border-white/20 text-white">
+              {featured.icon}
+            </div>
+          </div>
+        </article>
+
+        {/* Three secondary systems as a clean trio */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+          {rest.map((sys) => (
+            <article
+              key={sys.number}
+              className="group relative bg-white rounded-2xl border-2 border-gray-200 hover:border-gray-900 transition-all duration-300 p-6 sm:p-7 overflow-hidden flex flex-col h-full shadow-sm hover:shadow-xl"
+            >
+              {/* Animated top border on hover */}
+              <span className="absolute top-0 left-0 h-1 w-full bg-blue-600 transform translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out rounded-t-2xl" />
+
+              <div className="flex items-start justify-between mb-5">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 text-blue-600 border border-blue-100 flex items-center justify-center [&>svg]:w-6 [&>svg]:h-6">
+                  {sys.icon}
+                </div>
+                <span className="text-3xl sm:text-4xl font-black leading-none text-gray-100 group-hover:text-blue-100 transition-colors">
+                  {sys.number}
+                </span>
+              </div>
+
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-snug mb-2.5">
+                {sys.title}
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-5 flex-1">
+                {sys.description}
+              </p>
+
+              <div className="flex flex-wrap gap-1.5 pt-4 border-t border-gray-100">
+                {sys.keywords.map((k, i) => (
+                  <span
+                    key={i}
+                    className="px-2 py-0.5 rounded-md bg-gray-50 text-gray-700 text-[11px] font-medium border border-gray-100"
+                  >
+                    {k}
+                  </span>
+                ))}
+              </div>
+            </article>
           ))}
         </div>
 
-        <div className="text-center mt-8 sm:mt-12">
+        <div className="text-center mt-10 sm:mt-12">
           <Link
             href="/ai-systems"
             className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all duration-300"

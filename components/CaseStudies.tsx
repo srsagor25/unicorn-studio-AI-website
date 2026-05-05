@@ -2,39 +2,52 @@
 
 import Image from "next/image";
 
-const caseStudies = [
+export type CaseStudyItem = {
+  name: string;
+  eyebrow: string;
+  headline: React.ReactNode;
+  snapshot: string;
+  metrics: { value: string; label: string }[];
+  timelineLabel: string;
+  tools: string[];
+  gradientStyle: string;
+  image: string | null;
+  isFeatured: boolean;
+};
+
+export const caseStudies: CaseStudyItem[] = [
   {
-    name: "AI Communication System — D2C Skincare Brand",
-    eyebrow: "Case 01 — AI Communication Automation",
+    name: "AI Revenue Operations · B2B SaaS Platform",
+    eyebrow: "Case 01 · AI System for B2B SaaS",
     headline: (
       <>
-        How a D2C brand recovered <em className="italic font-medium">30% of lost leads</em> in 60 days — without adding a single salesperson.
+        How a B2B SaaS company shortened sales cycles by <em className="italic font-medium">42%</em> and unlocked a 6-figure pipeline in a quarter.
       </>
     ),
     snapshot:
-      "A direct-to-consumer skincare brand with 20K+ monthly inbound inquiries across WhatsApp, Instagram DMs, and email. Lean team. Strong product. Conversion suffering from lead response gaps.",
+      "A mid-market B2B SaaS company selling to revenue teams. Long enterprise sales cycles, fragmented data across HubSpot, Salesforce, and Slack, and SDRs spending 60% of their time on manual research and CRM hygiene instead of selling.",
     metrics: [
-      { value: "~30%", label: "Previously-lost leads recovered" },
-      { value: "<90s", label: "Avg first-response time (was 6+ hrs)" },
-      { value: "−70%", label: "Sales rep time on unqualified leads" },
-      { value: "0", label: "Midnight DMs from the founder" },
+      { value: "−42%", label: "Sales cycle length (avg deal close)" },
+      { value: "3.4×", label: "SDR-qualified meetings per rep" },
+      { value: "$640K", label: "New pipeline added in 90 days" },
+      { value: "60%", label: "Reclaimed SDR selling time" },
     ],
-    timelineLabel: "5 weeks",
-    tools: ["WhatsApp Business API", "Instagram Graph API", "CRM", "Notion"],
-    gradientStyle: "linear-gradient(135deg, #2563eb, #4f46e5, #06b6d4)",
-    image: null as string | null,
+    timelineLabel: "8 weeks",
+    tools: ["HubSpot", "Salesforce", "Slack", "Clearbit", "OpenAI"],
+    gradientStyle: "linear-gradient(135deg, #0f172a, #1e3a8a, #0ea5e9)",
+    image: "/case-studies/b2b-saas-revops.svg",
     isFeatured: true,
   },
   {
     name: "Sip AI",
-    eyebrow: "Case 02 — AI Mobile Product",
+    eyebrow: "Case 02 · AI Mobile Product",
     headline: (
       <>
         An AI cocktail crafting app, <em className="italic font-medium">built and shipped</em> in 5 days.
       </>
     ),
     snapshot:
-      "A subscription-ready mobile app turning any set of ingredients into a personalized cocktail recipe — built end-to-end with FlutterFlow, Firebase, and GPT-4o.",
+      "A subscription-ready mobile app turning any set of ingredients into a personalized cocktail recipe. Built end-to-end with FlutterFlow, Firebase, and GPT-4o.",
     metrics: [
       { value: "5", label: "Days from zero to production" },
       { value: "GPT-4o", label: "Recipe generation engine" },
@@ -48,14 +61,14 @@ const caseStudies = [
   },
   {
     name: "Habitic",
-    eyebrow: "Case 03 — Mobile Product",
+    eyebrow: "Case 03 · Mobile Product",
     headline: (
       <>
         A habit tracker designed to feel <em className="italic font-medium">effortless every day.</em>
       </>
     ),
     snapshot:
-      "A FlutterFlow-built habit tracker with one-tap check-ins, streak tracking, progress charts, and a motivational onboarding flow — designed to never feel like a chore itself.",
+      "A FlutterFlow-built habit tracker with one-tap check-ins, streak tracking, progress charts, and a motivational onboarding flow. Designed to never feel like a chore itself.",
     metrics: [
       { value: "1-tap", label: "Daily check-ins" },
       { value: "FlutterFlow", label: "Built for rapid iteration" },
@@ -69,14 +82,14 @@ const caseStudies = [
   },
   {
     name: "Flairr",
-    eyebrow: "Case 04 — Custom Web Platform",
+    eyebrow: "Case 04 · Custom Web Platform",
     headline: (
       <>
         A prompt marketplace, <em className="italic font-medium">built from scratch.</em>
       </>
     ),
     snapshot:
-      "A two-sided marketplace where AI creators share, sell, and discover prompts. Personalized feeds, real-time messaging, secure payments, and a premium subscription tier — all custom-built.",
+      "A two-sided marketplace where AI creators share, sell, and discover prompts. Personalized feeds, real-time messaging, secure payments, and a premium subscription tier. All custom-built.",
     metrics: [
       { value: "Real-time", label: "Messaging via WebSockets" },
       { value: "Stripe", label: "Marketplace payments" },
@@ -102,7 +115,7 @@ export default function CaseStudies() {
             Case <span className="gradient-text-modern">Studies</span>
           </h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto font-light px-4">
-            How we&apos;ve built systems and products for real businesses — with real timelines, tools, and outcomes.
+            How we&apos;ve built systems and products for real businesses, with real timelines, tools, and outcomes.
           </p>
         </div>
 
@@ -149,7 +162,7 @@ export default function CaseStudies() {
                   <div className="absolute top-4 sm:top-6 left-4 sm:left-6">
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-blue-700 text-xs font-bold uppercase tracking-wider shadow-lg">
                       <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
-                      Featured · AI Systems
+                      Featured · B2B SaaS
                     </span>
                   </div>
                 )}

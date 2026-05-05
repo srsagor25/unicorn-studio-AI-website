@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface CaseStudy {
   timeline: { day: string; title: string; description: string }[];
@@ -25,8 +26,8 @@ interface Project {
 
 export const projects: Project[] = [
   {
-    name: "AI Communication System — D2C Skincare Brand",
-    description: "How a D2C brand recovered ~30% of lost leads in 60 days — without adding a single salesperson",
+    name: "AI Communication System · D2C Skincare Brand",
+    description: "How a D2C brand recovered ~30% of lost leads in 60 days, without adding a single salesperson.",
     stats: "Built in 5 weeks · WhatsApp + IG + Email · CRM enrichment",
     tags: ["AI Systems", "Communication Automation", "Lead Recovery"],
     image: null,
@@ -77,18 +78,18 @@ export const projects: Project[] = [
   },
   {
     name: "Sip AI",
-    description: "AI-powered cocktail recipe app — your personal bartender",
+    description: "AI-powered cocktail recipe app. Your personal bartender.",
     stats: "Built & shipped in just 5 days with FlutterFlow + GPT-4o",
     tags: ["Mobile App", "AI Integration", "FlutterFlow"],
     image: "/sip-ai-case-study.jpg",
     gradientStyle: "linear-gradient(135deg, #9333ea, #6366f1, #ec4899)",
     caseStudy: {
       overview:
-        "Sip AI is an AI-based cocktail crafting app that turns any set of ingredients into a personalized recipe. Users describe what they have or what mood they're in, and GPT-4o generates a curated cocktail — complete with steps, garnish tips, and flavor profiles.",
+        "Sip AI is an AI-based cocktail crafting app that turns any set of ingredients into a personalized recipe. Users describe what they have or what mood they're in, and GPT-4o generates a curated cocktail, complete with steps, garnish tips, and flavor profiles.",
       challenge:
-        "The goal was to go from zero to a fully functional, subscription-ready mobile app in under a week — proving that rapid development doesn't mean cutting corners on quality or user experience.",
+        "The goal was to go from zero to a fully functional, subscription-ready mobile app in under a week, proving that rapid development doesn't mean cutting corners on quality or user experience.",
       result:
-        "A production-ready app with secure authentication, an intuitive chat interface, intelligent recipe generation, a personal cocktail collection, and a working subscription model — all delivered in 5 days.",
+        "A production-ready app with secure authentication, an intuitive chat interface, intelligent recipe generation, a personal cocktail collection, and a working subscription model. All delivered in 5 days.",
       techStack: ["FlutterFlow", "Firebase", "OpenAI GPT-4o"],
       timeline: [
         {
@@ -113,7 +114,7 @@ export const projects: Project[] = [
           day: "Day 4",
           title: "Output Display & My Cocktails",
           description:
-            "Designed beautiful recipe output cards and built the 'My Cocktails' section — a personal collection to save and revisit favorites.",
+            "Designed beautiful recipe output cards and built the 'My Cocktails' section: a personal collection to save and revisit favorites.",
         },
         {
           day: "Day 5",
@@ -129,17 +130,17 @@ export const projects: Project[] = [
   {
     name: "Habitic",
     description: "A habit tracker app designed to help users build and maintain positive habits",
-    stats: "Built with FlutterFlow — intuitive UI for daily habit tracking & personal growth",
+    stats: "Built with FlutterFlow · intuitive UI for daily habit tracking & personal growth",
     tags: ["Mobile App", "FlutterFlow", "Productivity"],
     image: "/habitic-case-study.jpg",
     gradientStyle: "linear-gradient(135deg, #f97316, #ea580c, #dc2626)",
     caseStudy: {
       overview:
-        "Habitic is a FlutterFlow-powered habit tracker app that helps users build and maintain positive daily routines. It offers an intuitive, clean interface for creating habits, tracking streaks, and visualizing progress — encouraging consistency and personal growth over time.",
+        "Habitic is a FlutterFlow-powered habit tracker app that helps users build and maintain positive daily routines. It offers an intuitive, clean interface for creating habits, tracking streaks, and visualizing progress, encouraging consistency and personal growth over time.",
       challenge:
-        "The challenge was to create an app that feels effortless to use every day. Habit trackers fail when they become a chore themselves, so the UX had to be frictionless — one-tap check-ins, clear visual progress, and motivating streak indicators.",
+        "The challenge was to create an app that feels effortless to use every day. Habit trackers fail when they become a chore themselves, so the UX had to be frictionless: one-tap check-ins, clear visual progress, and motivating streak indicators.",
       result:
-        "A polished, production-ready habit tracking app with daily check-ins, streak tracking, progress charts, and a motivational onboarding flow — all built entirely with FlutterFlow for rapid iteration and deployment.",
+        "A polished, production-ready habit tracking app with daily check-ins, streak tracking, progress charts, and a motivational onboarding flow. All built entirely with FlutterFlow for rapid iteration and deployment.",
       techStack: ["FlutterFlow", "Firebase", "Dart"],
       timeline: [
         {
@@ -152,7 +153,7 @@ export const projects: Project[] = [
           day: "Day 2",
           title: "Habit Creation & Management",
           description:
-            "Built the core habit creation flow — users can define custom habits, set frequency (daily/weekly), choose icons, and organize them by category.",
+            "Built the core habit creation flow. Users can define custom habits, set frequency (daily or weekly), choose icons, and organize them by category.",
         },
         {
           day: "Day 3",
@@ -174,7 +175,7 @@ export const projects: Project[] = [
         },
       ],
       quote:
-        "Building Habitic reinforced how powerful FlutterFlow is for shipping real, user-facing products quickly. The focus was always on making the daily experience as frictionless as possible — and the result speaks for itself.",
+        "Building Habitic reinforced how powerful FlutterFlow is for shipping real, user-facing products quickly. The focus was always on making the daily experience as frictionless as possible, and the result speaks for itself.",
     },
   },
   {
@@ -188,9 +189,9 @@ export const projects: Project[] = [
       overview:
         "Flairr is a full-featured prompt marketplace built from scratch. Prompt engineers can share beautiful prompts, sell them to other creators, and build a following. Every user gets a personalized feed, and the platform handles payments and profit sharing seamlessly.",
       challenge:
-        "Building a two-sided marketplace from the ground up meant tackling user-generated content, real-time messaging, personalized feeds, secure payment flows, and a premium content model — all while keeping the experience fast and visually stunning.",
+        "Building a two-sided marketplace from the ground up meant tackling user-generated content, real-time messaging, personalized feeds, secure payment flows, and a premium content model, all while keeping the experience fast and visually stunning.",
       result:
-        "A fully custom web platform with prompt sharing, real-time messaging, personalized feeds, a prompt buy/sell marketplace with profit sharing, and a premium subscription tier — all wrapped in a sleek, dark-themed UI.",
+        "A fully custom web platform with prompt sharing, real-time messaging, personalized feeds, a prompt buy/sell marketplace with profit sharing, and a premium subscription tier. All wrapped in a sleek, dark-themed UI.",
       techStack: ["Next.js", "Node.js", "PostgreSQL", "Stripe", "WebSockets"],
       modalImages: ["/flairr-case-study-1.jpg", "/flairr-case-study-2.jpg"],
       timeline: [
@@ -210,7 +211,7 @@ export const projects: Project[] = [
           day: "Phase 3",
           title: "Messaging System",
           description:
-            "Implemented real-time messaging with WebSockets so creators can communicate directly — discuss prompts, negotiate custom work, and collaborate.",
+            "Implemented real-time messaging with WebSockets so creators can communicate directly: discuss prompts, negotiate custom work, and collaborate.",
         },
         {
           day: "Phase 4",
@@ -226,7 +227,7 @@ export const projects: Project[] = [
         },
       ],
       quote:
-        "Flairr was a full-stack challenge — marketplace logic, real-time chat, personalized feeds, and payment flows all in one platform. Building it custom gave us total control over the experience, and the result is something truly unique in the AI creator space.",
+        "Flairr was a full-stack challenge: marketplace logic, real-time chat, personalized feeds, and payment flows all in one platform. Building it custom gave us total control over the experience, and the result is something truly unique in the AI creator space.",
     },
   },
 ];
@@ -389,6 +390,19 @@ export default function RecentLaunches() {
               )}
             </div>
           </div>
+        </div>
+
+        {/* CTA: View all case studies */}
+        <div className="text-center mt-10 sm:mt-12">
+          <Link
+            href="/case-studies"
+            className="btn-primary inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 text-white rounded-xl font-semibold text-sm sm:text-base"
+          >
+            <span>View Case Studies</span>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
         </div>
       </div>
 

@@ -15,7 +15,7 @@ export default function AISystemsPage() {
       isMain: true,
       title: "AI Business Process Automation",
       description:
-        "Onboarding, approvals, reporting, internal agents, tool integrations — anything manual and repetitive in your operations. The work that shouldn't need a person, finally doesn't.",
+        "Onboarding, approvals, reporting, internal agents, tool integrations. Anything manual and repetitive in your operations. The work that shouldn't need a person, finally doesn't.",
       examples: [
         "Client onboarding workflows",
         "Internal approval routing",
@@ -26,10 +26,10 @@ export default function AISystemsPage() {
     },
     {
       number: "02",
-      tag: "for example",
+      tag: "Common build",
       title: "AI Marketing Systems",
       description:
-        "Social media automation across LinkedIn, Facebook, Instagram, X, Reddit — plus email marketing engines that segment, send, and follow up on autopilot.",
+        "Social media automation across LinkedIn, Facebook, Instagram, X and Reddit. Plus email marketing engines that segment, send, and follow up on autopilot.",
       examples: [
         "Multi-platform content engines",
         "Audience segmentation",
@@ -40,7 +40,7 @@ export default function AISystemsPage() {
     },
     {
       number: "03",
-      tag: "for example",
+      tag: "Common build",
       title: "AI Sales Systems",
       description:
         "Lead qualification, follow-up automation, pipeline routing, sales-handoff flows. Stop letting warm leads go cold.",
@@ -54,7 +54,7 @@ export default function AISystemsPage() {
     },
     {
       number: "04",
-      tag: "for example",
+      tag: "Common build",
       title: "AI Communication Automation",
       description:
         "WhatsApp, Discord, and Slack workflows. Conversational AI that responds, qualifies, routes, and escalates across every messaging channel your business runs on.",
@@ -79,7 +79,7 @@ export default function AISystemsPage() {
       step: "Step 2",
       title: "We map it",
       description:
-        "You get a written breakdown of every task in your business AI can take over — with realistic timelines and scope. Yours to keep, even if you don't hire us.",
+        "You get a written breakdown of every task in your business AI can take over, with realistic timelines and scope. Yours to keep, even if you don't hire us.",
     },
     {
       step: "Step 3",
@@ -111,7 +111,7 @@ export default function AISystemsPage() {
                 <span className="gradient-text-modern inline-block mt-2">That Run Your Business in the Background</span>
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-10">
-                Four kinds of systems we build well: process automation, marketing, sales, and communication. Tell us what your business does — we&apos;ll tell you which ones you actually need.
+                Four kinds of systems we build well: process automation, marketing, sales, and communication. Tell us what your business does and we&apos;ll tell you which ones you actually need.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
                 <button
@@ -143,7 +143,7 @@ export default function AISystemsPage() {
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
                     <span className="text-red-500 text-xl mt-0.5">✕</span>
-                    <span className="text-gray-700">Pick from a menu — we don&apos;t sell pre-packaged templates</span>
+                    <span className="text-gray-700">Pick from a menu. We don&apos;t sell pre-packaged templates</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-red-500 text-xl mt-0.5">✕</span>
@@ -222,7 +222,7 @@ export default function AISystemsPage() {
                         ? "bg-white/15 text-white backdrop-blur-sm"
                         : "bg-gray-100 text-gray-500"
                     }`}>
-                      {sys.isMain ? "" : "— "}{sys.tag}
+                      {sys.tag}
                     </span>
                     <h3 className={`text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 leading-tight ${
                       sys.isMain ? "text-white" : "text-gray-900"
@@ -309,15 +309,15 @@ export default function AISystemsPage() {
                 Built and Running, <span className="gradient-text-modern">Or We Work Free.</span>
               </h2>
               <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-                We agree on scope and timeline upfront — in writing — before any build begins.
+                We agree on scope and timeline upfront, in writing, before any build begins.
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-8">
               {[
-                <>We refund <strong>100% of your setup fee</strong> — no negotiation.</>,
+                <>We refund <strong>100% of your setup fee</strong>. No negotiation.</>,
                 <>We keep working with you <strong>at no cost</strong> until it&apos;s running as scoped.</>,
-                <>You keep <strong>every workflow, prompt, and asset</strong> we built — yours forever.</>,
+                <>You keep <strong>every workflow, prompt, and asset</strong> we built. Yours forever.</>,
               ].map((content, index) => (
                 <div key={index} className="bg-white p-6 sm:p-8 rounded-2xl border-2 border-gray-200 shadow-sm">
                   <div className="flex items-center gap-3 mb-4">
@@ -335,7 +335,7 @@ export default function AISystemsPage() {
 
             <div className="max-w-4xl mx-auto p-5 rounded-xl bg-white border border-gray-200">
               <p className="text-sm text-gray-600 italic leading-relaxed text-center">
-                We guarantee the system is built, integrated, and operational as scoped. We don&apos;t guarantee business outcomes — those depend on your strategy, offer, and inputs. We guarantee the infrastructure works. The rest is up to you.
+                We guarantee the system is built, integrated, and operational as scoped. We don&apos;t guarantee business outcomes. Those depend on your strategy, offer, and inputs. We guarantee the infrastructure works. The rest is up to you.
               </p>
             </div>
           </div>
@@ -356,7 +356,7 @@ export default function AISystemsPage() {
             <div className="space-y-3">
               {[
                 { title: "The discovery call is free.", desc: "You walk us through your business. We listen." },
-                { title: "The process map is free.", desc: "You leave with a written scope of every task AI can take over — whether you hire us or not." },
+                { title: "The process map is free.", desc: "You leave with a written scope of every task AI can take over, whether you hire us or not." },
                 { title: "The quote comes after the map.", desc: "Once we know what we're building, we give you an honest, fixed price." },
                 { title: "No quote, no commitment.", desc: "You can take the map and shop it elsewhere." },
               ].map((rule, i) => (
@@ -368,7 +368,7 @@ export default function AISystemsPage() {
             </div>
 
             <p className="mt-10 text-lg sm:text-xl text-gray-700 leading-relaxed italic max-w-2xl">
-              What we will tell you upfront: a custom AI system from us costs less than the salaries of the people it replaces — and works at 3am, on weekends, and through your team&apos;s vacations.
+              What we will tell you upfront: a custom AI system from us costs less than the salaries of the people it replaces. And it works at 3am, on weekends, and through your team&apos;s vacations.
             </p>
           </div>
         </section>
@@ -380,7 +380,7 @@ export default function AISystemsPage() {
               Stop watching. Start building.
             </h2>
             <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-              A free 30-minute call. No pitch. You walk us through your business — we tell you honestly which of our four systems you actually need.
+              A free 30-minute call. No pitch. You walk us through your business and we tell you honestly which of our four systems you actually need.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
