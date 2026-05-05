@@ -4,74 +4,78 @@ export default function Scarcity() {
       number: "01",
       title: "Limited new clients per month",
       description: "Every system is custom-built. We cap onboarding so quality never slips.",
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-      ),
+      caption: "Quality over scale",
     },
     {
       number: "02",
       title: "Founding rate locked for life",
       description: "As we scale, prices rise. Today's clients lock theirs forever.",
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-        </svg>
-      ),
+      caption: "Price holds. Permanently.",
     },
     {
       number: "03",
       title: "The AI gap is widening monthly",
       description: "Every week you wait, a competitor compounds their advantage.",
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-        </svg>
-      ),
+      caption: "Compounding, not linear",
     },
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs sm:text-sm font-medium mb-4 sm:mb-6">
-            Why Now
+    <section className="relative py-20 sm:py-28 lg:py-36 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+      {/* Subtle ambient backdrop */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.05),transparent_70%)]" />
+
+      <div className="relative max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-end mb-14 sm:mb-18 lg:mb-20">
+          <div>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 border border-amber-100 text-amber-700 text-xs sm:text-sm font-semibold mb-6 sm:mb-7">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+              Why now
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-[-0.02em] leading-[1.1]">
+              A few <span className="gradient-text-modern">honest</span> reasons not to wait.
+            </h2>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 tracking-tight px-4">
-            A few <span className="gradient-text-modern">honest</span> reasons not to wait.
-          </h2>
+          <p className="text-lg sm:text-xl text-gray-600 leading-[1.65]">
+            We&apos;d rather you understand the cost of waiting than the cost of working with us. Here&apos;s the part most agencies won&apos;t put in writing.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+        {/* Ledger-style list */}
+        <ol className="rounded-3xl border border-gray-200 bg-gradient-to-b from-white to-gray-50 overflow-hidden shadow-sm">
           {reasons.map((reason, index) => (
-            <div
-              key={index}
-              className="group relative bg-white p-6 sm:p-8 rounded-2xl border-2 border-gray-200 hover:border-gray-900 transition-colors duration-300 overflow-hidden"
+            <li
+              key={reason.number}
+              className={`group relative grid grid-cols-[auto_1fr] sm:grid-cols-[140px_1fr_auto] gap-5 sm:gap-10 items-center px-6 sm:px-10 lg:px-14 py-8 sm:py-10 lg:py-12 ${
+                index !== reasons.length - 1 ? "border-b border-gray-200" : ""
+              } transition-colors hover:bg-blue-50/40`}
             >
-              <div className="absolute top-0 left-0 h-1.5 w-full bg-blue-600 transform translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-out rounded-t-2xl" />
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+              {/* Big numeral */}
+              <div className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight bg-gradient-to-br from-blue-600 to-indigo-600 bg-clip-text text-transparent leading-none">
+                {reason.number}
+              </div>
 
-              <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white shadow-lg">
-                    {reason.icon}
-                  </div>
-                  <span className="text-2xl sm:text-3xl font-bold text-blue-600/30">
-                    {reason.number}
-                  </span>
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight">
+              {/* Title + body */}
+              <div className="col-span-2 sm:col-span-1">
+                <h3 className="text-xl sm:text-2xl lg:text-[26px] font-bold text-gray-900 leading-[1.2] mb-2 sm:mb-2.5">
                   {reason.title}
                 </h3>
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                <p className="text-[15px] sm:text-base text-gray-600 leading-[1.7] max-w-2xl">
                   {reason.description}
                 </p>
               </div>
-            </div>
+
+              {/* Right caption */}
+              <div className="hidden sm:block text-right">
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-gray-200 text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-500">
+                  <span className="w-1 h-1 rounded-full bg-blue-500" />
+                  {reason.caption}
+                </span>
+              </div>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   );

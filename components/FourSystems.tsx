@@ -63,31 +63,31 @@ export default function FourSystems() {
   return (
     <section
       id="systems"
-      className="py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white"
+      className="py-20 sm:py-28 lg:py-36 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-10 sm:mb-14 lg:mb-16">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+        <div className="text-center mb-14 sm:mb-18 lg:mb-20">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs sm:text-sm font-semibold mb-6 sm:mb-7">
             The Four Systems
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 tracking-tight px-4 max-w-4xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-5 sm:mb-6 tracking-[-0.02em] px-4 max-w-4xl mx-auto leading-[1.1]">
             Four systems.
             <span className="gradient-text-modern"> Built around your business,</span> not a template.
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto font-light px-4">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-[1.6] px-4">
             We don&apos;t pick from a menu. You tell us about your business, and we map out exactly which systems you actually need.
           </p>
         </div>
 
         {/* Featured: Our specialty */}
-        <article className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-700 via-blue-700 to-indigo-700 text-white shadow-2xl shadow-blue-600/25 mb-6 sm:mb-8">
+        <article className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-700 via-blue-700 to-indigo-700 text-white shadow-2xl shadow-blue-600/25 mb-7 sm:mb-9 lg:mb-10">
           {/* Decorative glow */}
           <div className="pointer-events-none absolute -top-32 -right-32 w-[420px] h-[420px] rounded-full bg-cyan-400/20 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-32 -left-32 w-[420px] h-[420px] rounded-full bg-indigo-400/20 blur-3xl" />
           {/* Subtle grid */}
           <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#ffffff14_1px,transparent_1px),linear-gradient(to_bottom,#ffffff14_1px,transparent_1px)] bg-[size:48px_48px] opacity-40" />
 
-          <div className="relative grid grid-cols-1 lg:grid-cols-[auto_1fr_auto] gap-6 lg:gap-12 items-center p-6 sm:p-10 lg:p-12">
+          <div className="relative grid grid-cols-1 lg:grid-cols-[auto_1fr_auto] gap-8 lg:gap-14 items-center p-8 sm:p-12 lg:p-14">
             {/* Number column */}
             <div className="flex lg:flex-col items-baseline lg:items-start gap-3">
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-white text-[11px] font-bold uppercase tracking-[0.18em] backdrop-blur-sm">
@@ -127,16 +127,16 @@ export default function FourSystems() {
         </article>
 
         {/* Three secondary systems as a clean trio */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-7 lg:gap-8">
           {rest.map((sys) => (
             <article
               key={sys.number}
-              className="group relative bg-white rounded-2xl border-2 border-gray-200 hover:border-gray-900 transition-all duration-300 p-6 sm:p-7 overflow-hidden flex flex-col h-full shadow-sm hover:shadow-xl"
+              className="group relative bg-white rounded-2xl border border-gray-200 hover:border-gray-300 transition-all duration-300 p-7 sm:p-8 lg:p-9 overflow-hidden flex flex-col h-full shadow-sm hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.12)]"
             >
               {/* Animated top border on hover */}
               <span className="absolute top-0 left-0 h-1 w-full bg-blue-600 transform translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out rounded-t-2xl" />
 
-              <div className="flex items-start justify-between mb-5">
+              <div className="flex items-start justify-between mb-6 sm:mb-7">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 text-blue-600 border border-blue-100 flex items-center justify-center [&>svg]:w-6 [&>svg]:h-6">
                   {sys.icon}
                 </div>
@@ -145,18 +145,18 @@ export default function FourSystems() {
                 </span>
               </div>
 
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-snug mb-2.5">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-[1.3] mb-3">
                 {sys.title}
               </h3>
-              <p className="text-sm text-gray-600 leading-relaxed mb-5 flex-1">
+              <p className="text-[15px] text-gray-600 leading-[1.7] mb-7 flex-1">
                 {sys.description}
               </p>
 
-              <div className="flex flex-wrap gap-1.5 pt-4 border-t border-gray-100">
+              <div className="flex flex-wrap gap-1.5 pt-5 border-t border-gray-100">
                 {sys.keywords.map((k, i) => (
                   <span
                     key={i}
-                    className="px-2 py-0.5 rounded-md bg-gray-50 text-gray-700 text-[11px] font-medium border border-gray-100"
+                    className="px-2.5 py-1 rounded-md bg-gray-50 text-gray-700 text-[11px] font-medium border border-gray-100"
                   >
                     {k}
                   </span>
@@ -166,7 +166,7 @@ export default function FourSystems() {
           ))}
         </div>
 
-        <div className="text-center mt-10 sm:mt-12">
+        <div className="text-center mt-14 sm:mt-16 lg:mt-20">
           <Link
             href="/ai-systems"
             className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all duration-300"

@@ -26,7 +26,7 @@ export default function Plan() {
   return (
     <section
       id="process"
-      className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-[#0b1224] via-[#0f1f4a] to-[#0b1224] text-white"
+      className="relative py-20 sm:py-28 lg:py-36 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-[#0b1224] via-[#0f1f4a] to-[#0b1224] text-white"
     >
       {/* Background ambience */}
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:48px_48px]" />

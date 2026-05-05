@@ -268,14 +268,17 @@ export default function RecentLaunches() {
   const project = projects[currentIndex];
 
   return (
-    <section id="portfolio" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <section id="portfolio" className="py-20 sm:py-28 lg:py-36 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 px-4">
-            Recent Launches
+        <div className="text-center mb-14 sm:mb-18 lg:mb-20">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs sm:text-sm font-semibold mb-6 sm:mb-7">
+            Portfolio
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-5 sm:mb-6 tracking-[-0.02em] px-4 leading-[1.1]">
+            Recent <span className="gradient-text-modern">launches.</span>
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 px-4">
-            Real products, real results, real impact
+          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-[1.6] px-4">
+            Real products, real results, real impact.
           </p>
         </div>
 
@@ -393,10 +396,10 @@ export default function RecentLaunches() {
         </div>
 
         {/* CTA: View all case studies */}
-        <div className="text-center mt-10 sm:mt-12">
+        <div className="text-center mt-14 sm:mt-16 lg:mt-20">
           <Link
             href="/case-studies"
-            className="btn-primary inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 text-white rounded-xl font-semibold text-sm sm:text-base"
+            className="btn-primary inline-flex items-center gap-2 px-7 sm:px-9 py-3.5 sm:py-4 text-white rounded-xl font-semibold text-sm sm:text-base"
           >
             <span>View Case Studies</span>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

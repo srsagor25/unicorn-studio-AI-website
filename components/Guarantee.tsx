@@ -39,35 +39,35 @@ export default function Guarantee() {
   return (
     <section
       id="guarantee"
-      className="relative py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-blue-50/40 to-white overflow-hidden"
+      className="relative py-20 sm:py-28 lg:py-36 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-blue-50/40 to-white overflow-hidden"
     >
       {/* Decorative backdrop */}
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(37,99,235,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(37,99,235,0.04)_1px,transparent_1px)] bg-[size:48px_48px]" />
       <div className="pointer-events-none absolute -top-32 left-1/2 -translate-x-1/2 w-[680px] h-[680px] rounded-full bg-blue-200/30 blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto">
-        <div className="text-center mb-10 sm:mb-14 lg:mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-blue-200 text-blue-700 text-xs sm:text-sm font-semibold shadow-sm mb-5 sm:mb-6">
+        <div className="text-center mb-14 sm:mb-18 lg:mb-20">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-blue-200 text-blue-700 text-xs sm:text-sm font-semibold shadow-sm mb-6 sm:mb-7">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
             </svg>
             The Reverse-Risk Guarantee
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight px-4 max-w-4xl mx-auto leading-[1.05] mb-4 sm:mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-[-0.02em] px-4 max-w-4xl mx-auto leading-[1.1] mb-5 sm:mb-7">
             Built and running,
             <span className="gradient-text-modern"> or we work free.</span>
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto font-light px-4">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-[1.6] px-4">
             We agree on scope and timeline upfront, in writing, before any build begins. If we don&apos;t deliver what we agreed to, when we agreed to:
           </p>
         </div>
 
         {/* Pillars */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 lg:gap-7 mb-10 sm:mb-14 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-7 lg:gap-8 mb-14 sm:mb-18 max-w-6xl mx-auto">
           {guarantees.map((g) => (
             <article
               key={g.number}
-              className="group relative rounded-3xl bg-white border border-gray-200 p-6 sm:p-8 shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col"
+              className="group relative rounded-3xl bg-white border border-gray-200 p-8 sm:p-9 lg:p-10 shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col"
             >
               {/* Top accent bar */}
               <div
@@ -80,17 +80,17 @@ export default function Guarantee() {
 
               <div className="relative z-10 flex flex-col h-full">
                 <div
-                  className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${g.accent} text-white flex items-center justify-center shadow-lg shadow-blue-500/20 mb-5 sm:mb-6`}
+                  className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${g.accent} text-white flex items-center justify-center shadow-lg shadow-blue-500/20 mb-7`}
                 >
                   {g.icon}
                 </div>
-                <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.22em] text-gray-400 mb-2">
+                <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.24em] text-gray-400 mb-3">
                   Promise {g.number}
                 </div>
-                <h3 className="text-xl sm:text-[22px] font-bold text-gray-900 leading-snug mb-3">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 leading-[1.25] mb-4">
                   {g.title}
                 </h3>
-                <p className="text-sm sm:text-[15px] text-gray-600 leading-relaxed">
+                <p className="text-[15px] sm:text-base text-gray-600 leading-[1.7]">
                   {g.body}
                 </p>
               </div>

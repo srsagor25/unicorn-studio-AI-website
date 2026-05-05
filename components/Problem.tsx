@@ -50,7 +50,7 @@ export default function Problem() {
   return (
     <section
       id="problem"
-      className="relative py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden"
+      className="relative py-20 sm:py-28 lg:py-36 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden"
     >
       {/* Subtle backdrop pattern */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.06),transparent_60%)]" />
@@ -58,68 +58,68 @@ export default function Problem() {
       <div className="pointer-events-none absolute bottom-0 -right-40 w-[480px] h-[480px] rounded-full bg-rose-100/40 blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto">
-        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-50 border border-rose-100 text-rose-700 text-xs sm:text-sm font-semibold mb-5 sm:mb-6">
+        <div className="text-center mb-16 sm:mb-20 lg:mb-24">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-50 border border-rose-100 text-rose-700 text-xs sm:text-sm font-semibold mb-6 sm:mb-7">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full rounded-full bg-rose-500 opacity-75 animate-ping" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-rose-600" />
             </span>
             The honest part
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight px-4 max-w-4xl mx-auto leading-[1.1] mb-4 sm:mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-[-0.02em] px-4 max-w-4xl mx-auto leading-[1.1] mb-5 sm:mb-7">
             Your competitor is already installing AI.
             <br className="hidden sm:block" />
             <span className="gradient-text-modern"> You just haven&apos;t seen them yet.</span>
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto font-light px-4">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-[1.6] px-4">
             Three quiet shifts already changing who wins the next five years.
           </p>
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-7 lg:gap-8">
           {problems.map((problem) => (
             <article
               key={problem.number}
-              className="group relative bg-white rounded-2xl border border-gray-200 p-6 sm:p-7 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-gray-900"
+              className="group relative bg-white rounded-3xl border border-gray-200 p-8 sm:p-9 lg:p-10 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.15)] hover:border-gray-300"
             >
               {/* Top accent bar */}
               <div
-                className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${problem.accent} transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out`}
+                className={`absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r ${problem.accent} transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out`}
               />
-              {/* Background watermark number */}
-              <div className="absolute -top-2 -right-2 text-[140px] sm:text-[160px] font-black leading-none text-gray-100/70 select-none pointer-events-none">
+              {/* Background watermark number (subtler) */}
+              <div className="absolute -top-1 right-3 text-[120px] sm:text-[140px] font-black leading-none text-gray-50 select-none pointer-events-none">
                 {problem.number}
               </div>
 
               <div className="relative z-10">
                 {/* Icon + label */}
-                <div className="flex items-center justify-between mb-5 sm:mb-6">
+                <div className="flex items-center justify-between mb-6 sm:mb-7">
                   <div
-                    className={`w-11 h-11 rounded-xl bg-gradient-to-br ${problem.accent} text-white flex items-center justify-center shadow-lg`}
+                    className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${problem.accent} text-white flex items-center justify-center shadow-lg shadow-blue-500/10`}
                   >
                     {problem.icon}
                   </div>
-                  <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.22em] text-gray-400">
+                  <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.24em] text-gray-400">
                     Shift {problem.number}
                   </span>
                 </div>
 
-                <h3 className="text-xl sm:text-[22px] font-bold text-gray-900 leading-snug mb-3">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 leading-[1.25] mb-4">
                   {problem.title}
                 </h3>
-                <p className="text-sm sm:text-[15px] text-gray-600 leading-relaxed mb-6">
+                <p className="text-[15px] sm:text-base text-gray-600 leading-[1.7] mb-8">
                   {problem.description}
                 </p>
 
                 {/* Stat strip */}
-                <div className="flex items-end gap-3 pt-4 border-t border-gray-100">
+                <div className="flex items-end gap-4 pt-5 sm:pt-6 border-t border-gray-100">
                   <div
                     className={`text-3xl sm:text-4xl font-black leading-none bg-gradient-to-r ${problem.accent} bg-clip-text text-transparent`}
                   >
                     {problem.stat}
                   </div>
-                  <div className="text-[11px] sm:text-xs text-gray-500 leading-tight pb-1 max-w-[60%]">
+                  <div className="text-[11px] sm:text-xs text-gray-500 leading-snug pb-1 max-w-[58%]">
                     {problem.statLabel}
                   </div>
                 </div>
@@ -129,7 +129,7 @@ export default function Problem() {
         </div>
 
         {/* Footer note */}
-        <p className="mt-10 sm:mt-12 text-center text-sm sm:text-base text-gray-500 max-w-2xl mx-auto">
+        <p className="mt-14 sm:mt-16 text-center text-base sm:text-lg text-gray-500 max-w-2xl mx-auto">
           You don&apos;t need to panic. You do need a plan.
         </p>
       </div>

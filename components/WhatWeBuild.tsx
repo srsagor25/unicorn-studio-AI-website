@@ -59,20 +59,20 @@ export default function WhatWeBuild() {
   ];
 
   return (
-    <section id="services" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="services" className="py-20 sm:py-28 lg:py-36 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-10 sm:mb-14 lg:mb-16">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+        <div className="text-center mb-14 sm:mb-18 lg:mb-20">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs sm:text-sm font-semibold mb-6 sm:mb-7">
             Services
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-5 tracking-tight px-4 max-w-4xl mx-auto leading-[1.1]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-5 sm:mb-7 tracking-[-0.02em] px-4 max-w-4xl mx-auto leading-[1.1]">
             What we <span className="gradient-text-modern">build.</span>
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto font-light px-4">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-[1.6] px-4">
             Three AI services and four product builds. Pick the one that fits, or let us help you choose.
           </p>
-          <div className="mt-6 sm:mt-7 flex flex-wrap justify-center gap-2 px-4">
+          <div className="mt-8 sm:mt-9 flex flex-wrap justify-center gap-2 px-4">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-[11px] sm:text-xs font-semibold">
               <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
               AI · 3 services
@@ -174,9 +174,9 @@ export default function WhatWeBuild() {
         </div>
 
         {/* Desktop Tab Layout */}
-        <div className="hidden lg:grid grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="hidden lg:grid grid-cols-2 gap-14 lg:gap-20 items-start">
           {/* Left Column - Service Tabs */}
-          <div className="space-y-3">
+          <div className="space-y-3.5">
             {services.map((service, index) => (
               <button
                 key={index}
@@ -225,24 +225,27 @@ export default function WhatWeBuild() {
           </div>
 
           {/* Right Column - Content Display */}
-          <div className="sticky top-8">
-            <div className="relative bg-gradient-to-br from-gray-50 to-blue-50/30 p-10 rounded-2xl border border-gray-200 shadow-xl min-h-[350px] flex items-center overflow-hidden">
+          <div className="sticky top-28">
+            <div className="relative bg-gradient-to-br from-gray-50 to-blue-50/30 p-12 lg:p-14 rounded-3xl border border-gray-200 shadow-xl min-h-[400px] flex items-center overflow-hidden">
               {/* Animated blue border at top - moves left to right */}
-              <div className="absolute top-0 left-0 h-1.5 w-full bg-blue-600 transform translate-x-[-100%] transition-transform duration-700 ease-out rounded-t-2xl animate-border"
+              <div className="absolute top-0 left-0 h-1.5 w-full bg-blue-600 transform translate-x-[-100%] transition-transform duration-700 ease-out rounded-t-3xl animate-border"
                 key={activeService}
                 style={{ animation: 'slideIn 700ms ease-out forwards' }}
               />
 
-              <div className="relative z-10">
-                <h3 className="text-3xl font-bold text-gray-900 mb-6">
+              <div className="relative z-10 w-full">
+                <span className="inline-block px-2.5 py-1 rounded-full bg-blue-100 text-blue-700 text-[10px] font-bold uppercase tracking-[0.18em] mb-5">
+                  {services[activeService].category}
+                </span>
+                <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 tracking-[-0.01em] leading-[1.15]">
                   {services[activeService].name}
                 </h3>
-                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                <p className="text-lg text-gray-700 leading-[1.7] mb-8">
                   {services[activeService].description}
                 </p>
                 <Link
                   href={services[activeService].link}
-                  className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3.5 rounded-xl font-bold hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
                   {services[activeService].linkText}
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
