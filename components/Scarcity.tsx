@@ -21,19 +21,19 @@ export default function Scarcity() {
   ];
 
   return (
-    <section className="relative py-20 sm:py-28 lg:py-36 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+    <section className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
       {/* Subtle ambient backdrop */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.05),transparent_70%)]" />
 
       <div className="relative max-w-6xl mx-auto">
         {/* Header */}
-        <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-end mb-14 sm:mb-18 lg:mb-20">
+        <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-end mb-10 sm:mb-12 lg:mb-14">
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 border border-amber-100 text-amber-700 text-xs sm:text-sm font-semibold mb-6 sm:mb-7">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
               Why now
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-[-0.02em] leading-[1.1]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-[-0.02em] leading-[1.1] text-balance">
               A few <span className="gradient-text-modern">honest</span> reasons not to wait.
             </h2>
           </div>

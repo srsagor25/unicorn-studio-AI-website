@@ -50,7 +50,7 @@ export default function Problem() {
   return (
     <section
       id="problem"
-      className="relative py-20 sm:py-28 lg:py-36 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden"
+      className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden"
     >
       {/* Subtle backdrop pattern */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.06),transparent_60%)]" />
@@ -58,7 +58,7 @@ export default function Problem() {
       <div className="pointer-events-none absolute bottom-0 -right-40 w-[480px] h-[480px] rounded-full bg-rose-100/40 blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto">
-        <div className="text-center mb-16 sm:mb-20 lg:mb-24">
+        <div className="text-center mb-10 sm:mb-12 lg:mb-14">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-50 border border-rose-100 text-rose-700 text-xs sm:text-sm font-semibold mb-6 sm:mb-7">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full rounded-full bg-rose-500 opacity-75 animate-ping" />
@@ -66,12 +66,11 @@ export default function Problem() {
             </span>
             The honest part
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-[-0.02em] px-4 max-w-4xl mx-auto leading-[1.1] mb-5 sm:mb-7">
-            Your competitor is already installing AI.
-            <br className="hidden sm:block" />
-            <span className="gradient-text-modern"> You just haven&apos;t seen them yet.</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-[-0.02em] px-4 max-w-4xl mx-auto leading-[1.1] mb-5 sm:mb-7 text-balance">
+            Your competitor is already installing AI.{" "}
+            <span className="gradient-text-modern">You just haven&apos;t seen them yet.</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-[1.6] px-4">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-[1.6] px-4 text-pretty">
             Three quiet shifts already changing who wins the next five years.
           </p>
         </div>

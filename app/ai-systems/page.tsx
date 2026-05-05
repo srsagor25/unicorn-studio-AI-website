@@ -105,12 +105,11 @@ export default function AISystemsPage() {
                 <span className="w-2 h-2 bg-blue-600 rounded-full" />
                 AI Systems · Custom-Built Per Business
               </div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 sm:mb-8 leading-[1.1] tracking-tight">
-                Custom AI Systems
-                <br />
-                <span className="gradient-text-modern inline-block mt-2">That Run Your Business in the Background</span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 sm:mb-8 leading-[1.1] tracking-tight text-balance max-w-4xl mx-auto">
+                Custom AI Systems{" "}
+                <span className="gradient-text-modern">that run your business in the background.</span>
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-10">
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-10 text-pretty">
                 Four kinds of systems we build well: process automation, marketing, sales, and communication. Tell us what your business does and we&apos;ll tell you which ones you actually need.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">

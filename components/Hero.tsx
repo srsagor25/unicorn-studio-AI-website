@@ -30,15 +30,13 @@ export default function Hero() {
           </div>
 
           {/* Main heading */}
-          <h1 className="text-[2.6rem] sm:text-6xl md:text-7xl lg:text-[5.25rem] font-bold text-gray-900 leading-[1.05] tracking-[-0.02em] mb-7 sm:mb-9 max-w-5xl mx-auto">
-            Integrate AI into your business
-            <span className="block mt-2 sm:mt-3">
-              <span className="gradient-text-modern">before your competitor does.</span>
-            </span>
+          <h1 className="text-[2.6rem] sm:text-6xl md:text-7xl lg:text-[5.25rem] font-bold text-gray-900 leading-[1.05] tracking-[-0.02em] mb-7 sm:mb-9 max-w-4xl mx-auto text-balance">
+            Integrate AI into your business{" "}
+            <span className="gradient-text-modern">before your competitor does.</span>
           </h1>
 
           {/* Subheading */}
-          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-[1.6] sm:leading-[1.65] mb-10 sm:mb-12 px-2">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-[1.6] sm:leading-[1.65] mb-10 sm:mb-12 px-2 text-pretty">
             Tell us about your business. We&apos;ll find what can be automated, build the AI systems that do it, and stay on it until it&apos;s running. Guaranteed, or we work for free until it does.
           </p>
 

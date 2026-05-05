@@ -26,7 +26,7 @@ export default function Plan() {
   return (
     <section
       id="process"
-      className="relative py-20 sm:py-28 lg:py-36 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-[#0b1224] via-[#0f1f4a] to-[#0b1224] text-white"
+      className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-[#0b1224] via-[#0f1f4a] to-[#0b1224] text-white"
     >
       {/* Background ambience */}
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:48px_48px]" />
@@ -34,12 +34,12 @@ export default function Plan() {
       <div className="pointer-events-none absolute -bottom-40 right-1/4 w-[520px] h-[520px] rounded-full bg-cyan-500/10 blur-3xl" />
 
       <div className="relative max-w-6xl mx-auto">
-        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+        <div className="text-center mb-10 sm:mb-12 lg:mb-14">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-blue-100 text-xs sm:text-sm font-semibold backdrop-blur-sm mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-300" />
             The Plan
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight px-4 leading-[1.1] mb-4 sm:mb-5">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight px-4 leading-[1.1] mb-4 sm:mb-5 max-w-3xl mx-auto text-balance">
             Three steps.
             <span className="bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent"> No surprises.</span>
           </h2>

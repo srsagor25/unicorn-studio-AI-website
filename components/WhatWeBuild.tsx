@@ -59,10 +59,10 @@ export default function WhatWeBuild() {
   ];
 
   return (
-    <section id="services" className="py-20 sm:py-28 lg:py-36 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="services" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-14 sm:mb-18 lg:mb-20">
+        <div className="text-center mb-10 sm:mb-12 lg:mb-14">
           <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs sm:text-sm font-semibold mb-6 sm:mb-7">
             Services
           </div>
