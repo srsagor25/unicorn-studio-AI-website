@@ -54,7 +54,7 @@ const testimonials = [
       { label: "Sub-second load time", bg: "bg-teal-50", text: "text-teal-700", border: "border-teal-100" },
     ],
     image: Tivan,
-    tag: "Product Website",
+    tag: "Website",
   },
 ];
 

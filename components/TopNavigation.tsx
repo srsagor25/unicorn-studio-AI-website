@@ -56,7 +56,7 @@ export default function TopNavigation() {
     { name: "AI Solutions", href: "/ai-solutions", description: "Intelligent products that solve real problems" },
     { name: "SaaS Products", href: "/saas-products", description: "From first commit to full-scale SaaS" },
     { name: "Mobile Apps", href: "/mobile-apps", description: "Native and cross-platform mobile apps" },
-    { name: "Product Websites", href: "/product-websites", description: "High-converting marketing sites" },
+    { name: "Websites", href: "/websites", description: "High-converting marketing and product sites" },
     { name: "Branding", href: "/branding", description: "Strategic brand identity that resonates" },
   ];
 

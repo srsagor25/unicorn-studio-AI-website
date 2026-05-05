@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import FlipCard from '@/components/FlipCard';
 import { useCalendly } from '@/components/CalendlyProvider';
 
-export default function ProductWebsitesPage() {
+export default function WebsitesPage() {
   const { openModal } = useCalendly();
   return (
     <>
@@ -89,12 +89,12 @@ export default function ProductWebsitesPage() {
           </div>
         </section>
 
-        {/* Types of Product Websites */}
+        {/* Types of Websites */}
         <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-blue-50/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                Types of Product Websites
+                Types of Websites We Build
               </h2>
             </div>
 

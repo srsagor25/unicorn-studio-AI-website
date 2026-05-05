@@ -11,7 +11,7 @@ const SERVICES = [
   "AI Solution / Custom AI Product",
   "SaaS Product",
   "Mobile App",
-  "Product Website",
+  "Website",
   "Branding",
   "Not sure yet",
 ];

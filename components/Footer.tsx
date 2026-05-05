@@ -8,7 +8,7 @@ export default function Footer() {
       { name: "AI Solutions", href: "/ai-solutions" },
       { name: "SaaS Products", href: "/saas-products" },
       { name: "Mobile Apps", href: "/mobile-apps" },
-      { name: "Product Websites", href: "/product-websites" },
+      { name: "Websites", href: "/websites" },
       { name: "Branding", href: "/branding" },
     ],
     company: [

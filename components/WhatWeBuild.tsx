@@ -43,11 +43,11 @@ export default function WhatWeBuild() {
       linkText: "Explore Mobile Apps"
     },
     {
-      name: "Product Websites",
-      category: "Product",
-      description: "High-converting web experiences that tell your story. From landing pages to full marketing sites, designed to turn visitors into customers.",
-      link: "/product-websites",
-      linkText: "Explore Product Websites"
+      name: "Websites",
+      category: "Web",
+      description: "High-converting web experiences that tell your story. From landing pages to full marketing and product sites, designed to turn visitors into customers.",
+      link: "/websites",
+      linkText: "Explore Websites"
     },
     {
       name: "Branding",
