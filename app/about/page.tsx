@@ -222,18 +222,27 @@ export default function AboutPage() {
                   The founder
                 </div>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-[1.1] tracking-[-0.02em] text-balance mb-6 sm:mb-8">
-                  Hi, I&apos;m Saidur. I built this studio so AI SaaS founders could{" "}
-                  <span className="gradient-text-modern">stop hiring six vendors.</span>
+                  Hi, I&apos;m Saidur. I built this studio so founders could{" "}
+                  <span className="gradient-text-modern">ship AI, not assemble it.</span>
                 </h2>
                 <div className="space-y-5 text-gray-700 text-base sm:text-lg leading-[1.7] text-pretty">
                   <p>
-                    I&apos;ve spent the last few years on both sides of the table: shipping AI products as a builder, and watching founders try to assemble them by stitching together a designer, a copywriter, a frontend dev, a backend dev, an AI engineer, and a brand person. The handoffs were where momentum died.
+                    I started building software the unglamorous way. Integrating tools, automating the boring parts of businesses everyone wanted off their plate. Pre-AI, that meant Zapier, custom scripts, and a lot of duct tape between systems that refused to cooperate. The work was useful. The ceiling was low.
                   </p>
                   <p>
-                    Unicorn Studio is the version of that team I wish I&apos;d had. We pick four kinds of work, do them well, hand back source files, and stay close enough to ship something that actually runs. No retainer trap. No vendor lock-in.
+                    Then language models got good enough to actually do the work. Not demo-day work. Real work. Onboarding that ran itself. Inbound that answered at 3am. Internal agents that did the lookup, the draft, and the handoff without a person. The ceiling I&apos;d been building under disappeared overnight.
                   </p>
                   <p>
-                    If you&apos;re building an AI SaaS and you&apos;d rather have one team than six, the discovery call is the right place to start. I take it personally for every new project.
+                    Across the next dozen projects, three shapes kept showing up. Some founders needed{" "}
+                    <span className="font-semibold text-gray-900">AI Systems</span> to automate the operational work their team was drowning in. Others needed an{" "}
+                    <span className="font-semibold text-gray-900">AI Solution</span>: one custom product solving a specific, painful problem nobody had a tool for. A few were building the next thing entirely. An{" "}
+                    <span className="font-semibold text-gray-900">AI SaaS</span>, with AI as the wedge of a subscription product. Different shapes, same broken pattern: six vendors, three handoffs, two months lost in the gaps.
+                  </p>
+                  <p>
+                    Unicorn Studio is the team I wish those founders had. We do those three kinds of AI work, plus the website and brand to launch each one credibly. One team. Source files yours. No retainer trap, no vendor lock-in.
+                  </p>
+                  <p>
+                    If you&apos;re building any of the three, the discovery call is the right place to start. I take it personally for every new project.
                   </p>
                 </div>
 
