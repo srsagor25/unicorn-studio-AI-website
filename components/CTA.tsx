@@ -82,7 +82,7 @@ export default function CTA() {
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-[-0.02em] leading-[1.1] mb-4 text-balance">
               Hey 👋 Got an{" "}
-              <span className="gradient-text-modern">AI system</span> in mind?
+              <span className="gradient-text-modern">AI project</span> in mind?
             </h2>
 
             <p className="text-base sm:text-lg text-gray-600 leading-[1.65] mb-3 max-w-md text-pretty">
