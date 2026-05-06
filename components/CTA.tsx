@@ -14,17 +14,19 @@ const SERVICES = [
   "Not sure yet",
 ];
 
-const TIMELINES = [
-  "Yesterday",
-  "Within the next month",
-  "Next quarter",
-  "Just exploring",
+const BUDGETS = [
+  "Under $10K",
+  "$10K – $25K",
+  "$25K – $50K",
+  "$50K – $100K",
+  "$100K+",
+  "Not sure yet",
 ];
 
 export default function CTA() {
   const { openModal } = useCalendly();
   const [service, setService] = useState("");
-  const [timeline, setTimeline] = useState("");
+  const [budget, setBudget] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -36,7 +38,7 @@ export default function CTA() {
       `Name: ${name || "(not provided)"}`,
       `Email: ${email || "(not provided)"}`,
       `Service: ${service || "(not selected)"}`,
-      `Timeline: ${timeline || "(not selected)"}`,
+      `Budget: ${budget || "(not selected)"}`,
       "",
       "Project notes:",
       message || "(none)",
@@ -179,28 +181,28 @@ export default function CTA() {
                 </div>
               </div>
 
-              {/* Timeline */}
+              {/* Budget */}
               <div>
                 <label
-                  htmlFor="cta-timeline"
+                  htmlFor="cta-budget"
                   className="block text-sm font-semibold text-gray-900 mb-2"
                 >
-                  When do you need it?
+                  What&apos;s your budget?
                 </label>
                 <div className="relative">
                   <select
-                    id="cta-timeline"
-                    value={timeline}
-                    onChange={(e) => setTimeline(e.target.value)}
+                    id="cta-budget"
+                    value={budget}
+                    onChange={(e) => setBudget(e.target.value)}
                     className="appearance-none w-full px-4 py-3.5 pr-10 rounded-xl border border-gray-300 bg-white text-gray-900 text-[15px] font-medium hover:border-gray-400 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none transition-colors cursor-pointer"
                     required
                   >
                     <option value="" disabled>
-                      Select a timeline…
+                      Select a range…
                     </option>
-                    {TIMELINES.map((t) => (
-                      <option key={t} value={t}>
-                        {t}
+                    {BUDGETS.map((b) => (
+                      <option key={b} value={b}>
+                        {b}
                       </option>
                     ))}
                   </select>
