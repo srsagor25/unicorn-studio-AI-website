@@ -23,11 +23,10 @@ const BUDGETS = [
   "Not sure yet",
 ];
 
-// Public Web3Forms access key. Configured in the Web3Forms dashboard
-// to deliver to saidur@unicornstudio.io. Safe to expose client-side
-// (Web3Forms keys are designed for static, client-side usage with
-// rate limiting + spam protection on their end).
-const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "";
+// Google Apps Script web app URL. The script (in scripts/contact-form.gs)
+// runs under saidur@unicornstudio.io and forwards submissions via Workspace.
+// Set NEXT_PUBLIC_FORM_ENDPOINT in env to the deployment URL.
+const FORM_ENDPOINT = process.env.NEXT_PUBLIC_FORM_ENDPOINT ?? "";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -54,9 +53,9 @@ export default function CTA() {
     setStatus("loading");
     setErrorMessage("");
 
-    if (!WEB3FORMS_KEY) {
+    if (!FORM_ENDPOINT) {
       // Fallback: drop into the user's mail client so the site still works
-      // before the access key has been set in production env vars.
+      // before the Apps Script endpoint has been configured in env vars.
       const subject = `New inquiry${service ? `, ${service}` : ""}`;
       const lines = [
         `Name: ${name || "(not provided)"}`,
@@ -76,37 +75,32 @@ export default function CTA() {
 
     try {
       const payload = {
-        access_key: WEB3FORMS_KEY,
-        subject: `New inquiry${service ? `, ${service}` : ""} from ${name || "the website"}`,
-        from_name: name || "Unicorn Studio website",
-        replyto: email,
-        // Form data shown in the email body
-        Name: name,
-        Email: email,
-        Service: service,
-        Budget: budget,
-        "Project notes": message,
+        name,
+        email,
+        service,
+        budget,
+        message,
         // Honeypot anti-spam (kept empty by real users)
         botcheck: "",
       };
 
-      const res = await fetch("https://api.web3forms.com/submit", {
+      // Apps Script web apps don't respond well to CORS preflight, so post as
+      // text/plain (which doesn't trigger one). The body is still JSON and
+      // the script parses it with JSON.parse.
+      const res = await fetch(FORM_ENDPOINT, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify(payload),
       });
 
-      const data = (await res.json()) as { success: boolean; message?: string };
+      const data = (await res.json()) as { success: boolean; error?: string };
 
       if (data.success) {
         setStatus("success");
         resetForm();
       } else {
         setStatus("error");
-        setErrorMessage(data.message ?? "Couldn't send right now. Please try again.");
+        setErrorMessage(data.error ?? "Couldn't send right now. Please try again.");
       }
     } catch (err) {
       setStatus("error");

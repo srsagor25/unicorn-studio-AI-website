@@ -47,7 +47,7 @@ export default function Footer() {
                 />
               </div>
               <p className="text-sm text-gray-600 leading-relaxed mb-6 max-w-sm">
-                Full-service product development studio specializing in AI, SaaS, and mobile applications. From concept to launch, we bring your vision to life.
+                A specialist studio for AI SaaS founders. AI Systems, AI Solutions, and full AI SaaS builds, plus the website and brand to launch each one credibly. One team, source files yours.
               </p>
 
               {/* Contact */}
