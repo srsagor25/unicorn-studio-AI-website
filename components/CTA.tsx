@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useCalendly } from "./CalendlyProvider";
 
 const SERVICES = [
@@ -59,13 +60,18 @@ export default function CTA() {
         <div className="grid lg:grid-cols-[minmax(0,42fr)_minmax(0,58fr)] gap-10 lg:gap-16 items-start">
           {/* LEFT — Identity / pitch */}
           <div className="lg:pt-2">
-            {/* Avatar */}
+            {/* Avatar — founder photo */}
             <div className="relative inline-block mb-6">
               <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-br from-blue-500 via-blue-600 to-indigo-600 p-[3px] shadow-[0_20px_50px_-12px_rgba(59,130,246,0.4)]">
-                <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
-                  <span className="text-3xl sm:text-4xl font-bold tracking-[-0.02em] gradient-text-modern">
-                    US
-                  </span>
+                <div className="w-full h-full rounded-full overflow-hidden bg-white">
+                  <Image
+                    src="/team/founder.jpg"
+                    alt="Saidur Rahaman, Founder of Unicorn Studio"
+                    width={224}
+                    height={224}
+                    className="w-full h-full object-cover"
+                    priority
+                  />
                 </div>
               </div>
               <span className="absolute bottom-1 right-1 flex items-center justify-center">

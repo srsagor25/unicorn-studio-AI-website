@@ -543,7 +543,7 @@ export default function WebsitePage() {
                         : "bg-gray-900 text-white hover:bg-gray-800"
                     }`}
                   >
-                    Scope a {tier.name.toLowerCase()} build
+                    Let&apos;s Build
                   </button>
                 </div>
               ))}

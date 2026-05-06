@@ -327,7 +327,7 @@ export default function BrandingPage() {
                           : "bg-white text-gray-900 border-2 border-gray-300 hover:border-gray-900"
                       }`}
                     >
-                      Scope this engagement
+                      Let&apos;s Build
                     </button>
                   </div>
                 </div>

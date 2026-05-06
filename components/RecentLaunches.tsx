@@ -72,57 +72,6 @@ export const projects: Project[] = [
     },
   },
   {
-    name: "AI Communication System · D2C Skincare Brand",
-    description: "How a D2C brand recovered ~30% of lost leads in 60 days, without adding a single salesperson.",
-    stats: "Built in 5 weeks · WhatsApp + IG + Email · CRM enrichment",
-    tags: ["AI Systems", "Communication Automation", "Lead Recovery"],
-    image: null,
-    gradientStyle: "linear-gradient(135deg, #2563eb, #4f46e5, #06b6d4)",
-    caseStudy: {
-      overview:
-        "A direct-to-consumer skincare brand with 20K+ monthly inbound inquiries across WhatsApp, Instagram DMs, and email. Lean team. Strong product. Conversion suffering from lead response gaps.",
-      challenge:
-        "The brand was generating volume but losing it at the front door. Inbound leads waited 6–12 hours for a first reply. Most never got a follow-up at all. Their two-person sales team was drowning, and the founder was answering DMs at midnight to plug the gaps.",
-      result:
-        "An AI communication system that recovered ~30% of previously-lost leads in 60 days, cut average first-response time from 6+ hours to under 90 seconds, reduced sales rep time on unqualified leads by 70%, and ended the founder's midnight DM shifts entirely.",
-      techStack: ["WhatsApp Business API", "Instagram Graph API", "Existing CRM", "ESP", "Notion"],
-      timeline: [
-        {
-          day: "Week 1",
-          title: "Discovery & Process Mapping",
-          description:
-            "Full audit of inbound channels, lead flow, and existing tools. Mapped every touchpoint from first DM to closed conversation. Identified the qualification logic the team used implicitly.",
-        },
-        {
-          day: "Week 2",
-          title: "Multi-channel Intake Layer",
-          description:
-            "Unified WhatsApp, Instagram DMs, and email into one conversation thread per lead. Set up the integration backbone and threading logic.",
-        },
-        {
-          day: "Week 3",
-          title: "AI Qualification Agent",
-          description:
-            "Built the conversational AI that engages leads naturally, asks qualifying questions, scores intent, and routes to either auto-reply or a human rep based on signal strength.",
-        },
-        {
-          day: "Week 4",
-          title: "Follow-up Automation & CRM",
-          description:
-            "Email follow-up sequences with behavior-based triggers for non-responsive leads. CRM enrichment so reps see full conversation history, intent score, and recommended next action on every handoff.",
-        },
-        {
-          day: "Week 5",
-          title: "Launch & Stabilization",
-          description:
-            "Production deployment, side-by-side QA with the sales team, edge-case fixes, and a 14-day stabilization window to fine-tune the qualification thresholds.",
-        },
-      ],
-      quote:
-        "We initially under-scoped the WhatsApp integration and had to extend the build by 8 days. On future builds, we now scope WhatsApp setup as its own phase rather than rolling it into general intake.",
-    },
-  },
-  {
     name: "Sip AI",
     description: "AI-powered cocktail recipe app. Your personal bartender.",
     stats: "Built & shipped in just 5 days with FlutterFlow + GPT-4o",

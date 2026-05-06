@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import TopNavigation from "@/components/TopNavigation";
 import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
@@ -176,6 +177,100 @@ export default function AboutPage() {
                 <p>
                   We chose to build the second kind, and to specialize narrowly enough to be excellent at it.
                 </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Founder */}
+        <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-[minmax(0,360px)_1fr] gap-10 lg:gap-20 items-start">
+              {/* Photo */}
+              <div className="relative mx-auto lg:mx-0 w-full max-w-[280px] lg:max-w-none">
+                <div className="relative aspect-square rounded-3xl overflow-hidden bg-gradient-to-br from-blue-500 via-blue-600 to-indigo-600 shadow-[0_30px_80px_-25px_rgba(37,99,235,0.45)]">
+                  <Image
+                    src="/team/founder.jpg"
+                    alt="Saidur Rahaman, Founder of Unicorn Studio"
+                    width={720}
+                    height={720}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="mt-5">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="relative flex h-2 w-2">
+                      <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                    </span>
+                    <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-700">
+                      Available for new projects
+                    </span>
+                  </div>
+                  <div className="text-xl sm:text-2xl font-bold text-gray-900 tracking-[-0.01em]">
+                    Saidur Rahaman
+                  </div>
+                  <div className="text-sm text-gray-500">
+                    Founder, Unicorn Studio
+                  </div>
+                </div>
+              </div>
+
+              {/* Bio */}
+              <div>
+                <div className="text-xs font-bold uppercase tracking-[0.2em] text-blue-600 mb-3">
+                  The founder
+                </div>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-[1.1] tracking-[-0.02em] text-balance mb-6 sm:mb-8">
+                  Hi, I&apos;m Saidur. I built this studio so AI SaaS founders could{" "}
+                  <span className="gradient-text-modern">stop hiring six vendors.</span>
+                </h2>
+                <div className="space-y-5 text-gray-700 text-base sm:text-lg leading-[1.7] text-pretty">
+                  <p>
+                    I&apos;ve spent the last few years on both sides of the table: shipping AI products as a builder, and watching founders try to assemble them by stitching together a designer, a copywriter, a frontend dev, a backend dev, an AI engineer, and a brand person. The handoffs were where momentum died.
+                  </p>
+                  <p>
+                    Unicorn Studio is the version of that team I wish I&apos;d had. We pick four kinds of work, do them well, hand back source files, and stay close enough to ship something that actually runs. No retainer trap. No vendor lock-in.
+                  </p>
+                  <p>
+                    If you&apos;re building an AI SaaS and you&apos;d rather have one team than six, the discovery call is the right place to start. I take it personally for every new project.
+                  </p>
+                </div>
+
+                {/* Personal links */}
+                <div className="mt-8 sm:mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
+                  <a
+                    href="mailto:contact@unicornstudio.io"
+                    className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span className="underline-offset-4 hover:underline">contact@unicornstudio.io</span>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/company/the-unicorn-studio/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                    <span className="underline-offset-4 hover:underline">LinkedIn</span>
+                  </a>
+                  <a
+                    href="https://x.com/unicornstudioai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                    <span className="underline-offset-4 hover:underline">@unicornstudioai</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
