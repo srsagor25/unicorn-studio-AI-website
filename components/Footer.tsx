@@ -37,13 +37,13 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
             {/* Brand Section — wider, left-aligned with the columns */}
             <div className="lg:col-span-5">
-              <a href="/" className="inline-flex items-center mb-5" aria-label="Unicorn Studio home">
+              <a href="/" className="inline-flex items-center mb-3 -ml-2 sm:-ml-3" aria-label="Unicorn Studio home">
                 <Image
                   src="/testimonial/main logo.svg"
                   alt="Unicorn Studio"
                   width={200}
                   height={48}
-                  className="h-12 sm:h-14 w-auto object-contain"
+                  className="h-24 sm:h-28 w-auto object-contain"
                 />
               </a>
               <p className="text-[15px] text-gray-600 leading-[1.7] mb-6 max-w-md">
