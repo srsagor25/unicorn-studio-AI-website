@@ -54,10 +54,9 @@ export default function TopNavigation() {
     { name: "AI Systems", href: "/ai-systems", description: "Custom AI automation built for your business" },
     { name: "AI Integrations", href: "/ai-integrations", description: "Add AI to your existing product" },
     { name: "AI Solutions", href: "/ai-solutions", description: "Intelligent products that solve real problems" },
-    { name: "SaaS Products", href: "/saas-products", description: "From first commit to full-scale SaaS" },
-    { name: "Mobile Apps", href: "/mobile-apps", description: "Native and cross-platform mobile apps" },
-    { name: "Websites", href: "/websites", description: "High-converting marketing and product sites" },
-    { name: "Branding", href: "/branding", description: "Strategic brand identity that resonates" },
+    { name: "AI SaaS", href: "/ai-saas", description: "From first commit to full-scale AI SaaS product" },
+    { name: "Websites", href: "/websites", description: "Conversion-focused sites for AI SaaS founders" },
+    { name: "Branding", href: "/branding", description: "Brand identity built for AI SaaS products" },
   ];
 
   const menuLinks = [

@@ -29,30 +29,23 @@ export default function WhatWeBuild() {
       linkText: "Explore AI Solutions"
     },
     {
-      name: "SaaS Products",
+      name: "AI SaaS",
       category: "Product",
-      description: "From first commit to full-scale SaaS. We build, test, and launch alongside you.",
-      link: "/saas-products",
-      linkText: "Explore SaaS Products"
-    },
-    {
-      name: "Mobile Apps",
-      category: "Product",
-      description: "Native and cross-platform apps that users love. iOS, Android, or React Native. We choose the right approach for your audience and budget.",
-      link: "/mobile-apps",
-      linkText: "Explore Mobile Apps"
+      description: "From first commit to full-scale AI SaaS product. We design, build, and launch the kind of subscription product founders actually want to run, with AI baked in from day one.",
+      link: "/ai-saas",
+      linkText: "Explore AI SaaS"
     },
     {
       name: "Websites",
       category: "Web",
-      description: "High-converting web experiences that tell your story. From landing pages to full marketing and product sites, designed to turn visitors into customers.",
+      description: "Conversion-focused websites built specifically for AI SaaS founders. Three tiers, fixed prices, fast turnarounds. From a single landing page to a full marketing and product site.",
       link: "/websites",
       linkText: "Explore Websites"
     },
     {
       name: "Branding",
       category: "Brand",
-      description: "Strategic brand identity that sets you apart. Logo, visual system, and messaging that resonate with your target market.",
+      description: "Brand identity built for AI SaaS products. Logo, visual system, and messaging that make your product look as serious as the technology behind it.",
       link: "/branding",
       linkText: "Explore Branding"
     },

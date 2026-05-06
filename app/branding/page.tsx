@@ -15,16 +15,22 @@ export default function BrandingPage() {
         {/* Hero Section */}
         <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-indigo-50" />
+          <div className="pointer-events-none absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full bg-blue-300/20 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-40 -right-40 w-[520px] h-[520px] rounded-full bg-indigo-300/20 blur-3xl" />
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-4xl mx-auto">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 sm:mb-8 leading-[1.1] tracking-tight">
-                Build a Brand
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-blue-200 text-blue-700 text-xs sm:text-sm font-semibold mb-6 sm:mb-8 shadow-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
+                Branding for AI SaaS products
+              </div>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 sm:mb-8 leading-[1.05] tracking-[-0.02em]">
+                A brand that takes your AI product
                 <br />
-                <span className="gradient-text-modern inline-block mt-2">That Sticks</span>
+                <span className="gradient-text-modern inline-block mt-2">as seriously as the tech.</span>
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-                Great products deserve memorable brands. We create strategic brand identities that resonate with your audience and stand out in the market.
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-[1.6] max-w-3xl mx-auto">
+                Strategic brand identity built specifically for AI SaaS founders. Logo, visual system, messaging, and tone, designed to earn trust with the buyers who matter.
               </p>
             </div>
           </div>
@@ -87,24 +93,24 @@ export default function BrandingPage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {[
                 {
-                  title: "Tech Startups",
-                  description: "Modern, scalable identities that attract investors and early adopters. Built for rapid growth."
+                  title: "AI SaaS Startups",
+                  description: "Modern, scalable identities for early-stage AI products. Built to attract investors, design partners, and the first 1,000 users."
                 },
                 {
-                  title: "SaaS Companies",
-                  description: "Professional brands that convey trust and reliability. Perfect for B2B sales."
+                  title: "B2B AI Platforms",
+                  description: "Professional brands that convey trust, reliability, and enterprise-grade safety. Designed for procurement teams and security reviews."
                 },
                 {
-                  title: "Mobile Apps",
-                  description: "Eye-catching identities optimized for app stores and small screens. Designed to be memorable."
+                  title: "AI Agents & Copilots",
+                  description: "Personality-forward identities for products that feel like teammates. Tone, voice, and visual cues that make AI feel human."
                 },
                 {
-                  title: "AI Products",
-                  description: "Forward-thinking brands that balance innovation with approachability. Making AI feel human."
+                  title: "AI Developer Tools",
+                  description: "Technical but not intimidating. Brands that engineers respect, share, and add to their stack."
                 },
                 {
-                  title: "Developer Tools",
-                  description: "Technical but not intimidating. Brands that developers respect and remember."
+                  title: "Vertical AI Products",
+                  description: "Industry-specific AI brands (legal, health, fintech) that earn instant credibility with the buyers who matter."
                 }
               ].map((category, index) => (
                 <div key={index} className="group relative bg-white p-8 rounded-2xl border-2 border-gray-200 hover:border-gray-900 transition-colors duration-300 overflow-hidden">
