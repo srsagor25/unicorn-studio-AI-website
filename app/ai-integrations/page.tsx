@@ -17,13 +17,13 @@ export default function AIIntegrationsPage() {
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-4xl mx-auto">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 sm:mb-8 leading-[1.1] tracking-tight">
-                Add AI to Your Product in
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 sm:mb-8 leading-[1.05] tracking-[-0.02em]">
+                Add AI to your product in
                 <br />
-                <span className="gradient-text-modern inline-block mt-2">Weeks, Not Months</span>
+                <span className="gradient-text-modern inline-block mt-2">weeks, not months.</span>
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-                Your users expect intelligent features. Your competitors are shipping them. We'll integrate AI into your existing product faster than you can hire an AI team.
+              <p className="text-lg sm:text-xl text-gray-600 leading-[1.65] max-w-2xl mx-auto">
+                Your competitors are already shipping intelligent features. We&apos;ll integrate AI into yours faster than you can hire a team.
               </p>
             </div>
           </div>
@@ -38,50 +38,46 @@ export default function AIIntegrationsPage() {
               </h2>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-              {/* What doesn't work */}
-              <div className="bg-red-50 p-8 rounded-2xl border-2 border-red-200">
-                <h3 className="text-2xl font-bold text-red-900 mb-6">What doesn't work:</h3>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3">
-                    <span className="text-red-500 text-xl mt-0.5">✕</span>
-                    <span className="text-gray-700">Bolting on generic chatbots that frustrate users</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-red-500 text-xl mt-0.5">✕</span>
-                    <span className="text-gray-700">Adding AI features that don't align with core workflows</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-red-500 text-xl mt-0.5">✕</span>
-                    <span className="text-gray-700">Implementing AI because "everyone else is doing it"</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-red-500 text-xl mt-0.5">✕</span>
-                    <span className="text-gray-700">Treating AI as a separate product instead of native functionality</span>
-                  </li>
+            <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+              <div className="bg-white p-8 rounded-2xl border border-gray-200">
+                <div className="text-[10px] font-mono uppercase tracking-[0.24em] text-rose-600 mb-3">What doesn&apos;t work</div>
+                <ul className="space-y-3.5">
+                  {[
+                    "Bolting on generic chatbots that frustrate users.",
+                    "Adding AI features that don&apos;t align with core workflows.",
+                    "Implementing AI because everyone else is.",
+                    "Treating AI as a separate product, not native functionality.",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <span className="flex-shrink-0 w-5 h-5 rounded-full bg-rose-50 text-rose-500 flex items-center justify-center mt-0.5">
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </span>
+                      <span className="text-[15px] text-gray-700 leading-[1.6]" dangerouslySetInnerHTML={{ __html: item }} />
+                    </li>
+                  ))}
                 </ul>
               </div>
 
-              {/* What actually works */}
-              <div className="bg-green-50 p-8 rounded-2xl border-2 border-green-200">
-                <h3 className="text-2xl font-bold text-green-900 mb-6">What actually works:</h3>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3">
-                    <span className="text-green-500 text-xl mt-0.5">✓</span>
-                    <span className="text-gray-700">AI features designed around your users' existing behaviors</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-green-500 text-xl mt-0.5">✓</span>
-                    <span className="text-gray-700">Intelligence that enhances your core value proposition</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-green-500 text-xl mt-0.5">✓</span>
-                    <span className="text-gray-700">Seamless integration that feels like it was always there</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-green-500 text-xl mt-0.5">✓</span>
-                    <span className="text-gray-700">AI that solves the problems your users actually have</span>
-                  </li>
+              <div className="bg-white p-8 rounded-2xl border border-gray-200">
+                <div className="text-[10px] font-mono uppercase tracking-[0.24em] text-emerald-600 mb-3">What actually works</div>
+                <ul className="space-y-3.5">
+                  {[
+                    "AI designed around your users&apos; existing behaviours.",
+                    "Intelligence that enhances your core value prop.",
+                    "Integration that feels like it was always there.",
+                    "AI that solves the problems your users actually have.",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <span className="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center mt-0.5">
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
+                      <span className="text-[15px] text-gray-700 leading-[1.6]" dangerouslySetInnerHTML={{ __html: item }} />
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -418,9 +414,9 @@ export default function AIIntegrationsPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={openModal}
-                className="btn-primary-light px-8 py-4 text-blue-700 rounded-xl font-semibold text-lg"
+                className="btn-primary-light px-8 py-4 text-blue-700 rounded-xl font-semibold text-base sm:text-lg"
               >
-                LET'S BUILD
+                Book a discovery call
               </button>
             </div>
           </div>

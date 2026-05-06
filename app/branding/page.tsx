@@ -29,8 +29,8 @@ export default function BrandingPage() {
                 <br />
                 <span className="gradient-text-modern inline-block mt-2">as seriously as the tech.</span>
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-[1.6] max-w-3xl mx-auto">
-                Strategic brand identity built specifically for AI SaaS founders. Logo, visual system, messaging, and tone, designed to earn trust with the buyers who matter.
+              <p className="text-lg sm:text-xl text-gray-600 leading-[1.65] max-w-2xl mx-auto">
+                Logo, visual system, messaging, and tone. Built to earn trust with the buyers who matter.
               </p>
             </div>
           </div>
@@ -540,9 +540,9 @@ export default function BrandingPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={openModal}
-                className="btn-primary-light px-8 py-4 text-blue-700 rounded-xl font-semibold text-lg"
+                className="btn-primary-light px-8 py-4 text-blue-700 rounded-xl font-semibold text-base sm:text-lg"
               >
-                LET'S BUILD
+                Book a discovery call
               </button>
             </div>
           </div>

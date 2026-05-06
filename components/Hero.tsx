@@ -44,9 +44,9 @@ export default function Hero() {
             <span className="gradient-text-modern">before your competitor does.</span>
           </h1>
 
-          {/* Subheading — two tight sentences */}
+          {/* Subheading — three short sentences */}
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-[1.6] mb-8 sm:mb-10 px-2 text-pretty">
-            Tell us how your business works. We&apos;ll map what AI can take over, build it, and stay on it until it runs — guaranteed, or we work for free.
+            Tell us how your business works. We&apos;ll map what AI can take over, build it, and stay on it until it runs. Guaranteed, or we work for free.
           </p>
 
           {/* CTAs */}
@@ -239,7 +239,7 @@ export default function Hero() {
 
             {/* Caption */}
             <p className="mt-3 text-[11px] sm:text-xs text-gray-400 italic">
-              Illustrative — every system we build is custom to your business.
+              Illustrative. Every system we build is custom to your business.
             </p>
           </div>
 

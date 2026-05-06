@@ -103,21 +103,21 @@ export default function AISystemsPage() {
             <div className="text-center max-w-4xl mx-auto">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs sm:text-sm font-semibold mb-6 sm:mb-8">
                 <span className="w-2 h-2 bg-blue-600 rounded-full" />
-                AI Systems · Custom-Built Per Business
+                AI Systems · Custom-built per business
               </div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 sm:mb-8 leading-[1.1] tracking-tight text-balance max-w-4xl mx-auto">
-                Custom AI Systems{" "}
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 sm:mb-8 leading-[1.05] tracking-[-0.02em] text-balance max-w-4xl mx-auto">
+                Custom AI systems{" "}
                 <span className="gradient-text-modern">that run your business in the background.</span>
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-10 text-pretty">
-                Four kinds of systems we build well: process automation, marketing, sales, and communication. Tell us what your business does and we&apos;ll tell you which ones you actually need.
+              <p className="text-lg sm:text-xl text-gray-600 leading-[1.65] max-w-2xl mx-auto mb-8 sm:mb-10 text-pretty">
+                Four kinds we build well: process automation, marketing, sales, and communication. Tell us what your business does, we&apos;ll tell you which you need.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
                 <button
                   onClick={openModal}
                   className="btn-primary group w-full sm:w-auto px-8 py-4 text-white rounded-xl font-semibold text-base text-center flex items-center justify-center gap-2"
                 >
-                  Book a Free Discovery Call
+                  Book a discovery call
                   <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -126,7 +126,7 @@ export default function AISystemsPage() {
                   href="#systems"
                   className="btn-secondary w-full sm:w-auto px-8 py-4 bg-white text-gray-900 rounded-xl font-semibold text-base border-2 border-gray-300 text-center"
                 >
-                  See the Four Systems
+                  See the four systems
                 </a>
               </div>
             </div>
@@ -136,48 +136,46 @@ export default function AISystemsPage() {
         {/* What we build */}
         <section className="py-16 sm:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-              <div className="bg-red-50 p-8 rounded-2xl border-2 border-red-200">
-                <h3 className="text-2xl font-bold text-red-900 mb-6">What we don&apos;t do:</h3>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3">
-                    <span className="text-red-500 text-xl mt-0.5">✕</span>
-                    <span className="text-gray-700">Pick from a menu. We don&apos;t sell pre-packaged templates</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-red-500 text-xl mt-0.5">✕</span>
-                    <span className="text-gray-700">Strategy, copywriting, or business outcome guarantees</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-red-500 text-xl mt-0.5">✕</span>
-                    <span className="text-gray-700">Resell SaaS tools dressed up as AI</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-red-500 text-xl mt-0.5">✕</span>
-                    <span className="text-gray-700">Black-box integrations you can&apos;t own or audit</span>
-                  </li>
+            <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+              <div className="bg-white p-8 rounded-2xl border border-gray-200">
+                <div className="text-[10px] font-mono uppercase tracking-[0.24em] text-rose-600 mb-3">What we don&apos;t do</div>
+                <ul className="space-y-3.5">
+                  {[
+                    "Pick from a menu. No pre-packaged templates.",
+                    "Strategy, copywriting, or business-outcome guarantees.",
+                    "Resell SaaS tools dressed up as AI.",
+                    "Black-box integrations you can&apos;t own or audit.",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <span className="flex-shrink-0 w-5 h-5 rounded-full bg-rose-50 text-rose-500 flex items-center justify-center mt-0.5">
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </span>
+                      <span className="text-[15px] text-gray-700 leading-[1.6]" dangerouslySetInnerHTML={{ __html: item }} />
+                    </li>
+                  ))}
                 </ul>
               </div>
 
-              <div className="bg-green-50 p-8 rounded-2xl border-2 border-green-200">
-                <h3 className="text-2xl font-bold text-green-900 mb-6">What we actually build:</h3>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3">
-                    <span className="text-green-500 text-xl mt-0.5">✓</span>
-                    <span className="text-gray-700">Custom AI infrastructure scoped to your business</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-green-500 text-xl mt-0.5">✓</span>
-                    <span className="text-gray-700">Workflows, prompts, and assets that you fully own</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-green-500 text-xl mt-0.5">✓</span>
-                    <span className="text-gray-700">Integrations into the tools your team already uses</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-green-500 text-xl mt-0.5">✓</span>
-                    <span className="text-gray-700">Maintenance by the same team that built it</span>
-                  </li>
+              <div className="bg-white p-8 rounded-2xl border border-gray-200">
+                <div className="text-[10px] font-mono uppercase tracking-[0.24em] text-emerald-600 mb-3">What we actually build</div>
+                <ul className="space-y-3.5">
+                  {[
+                    "Custom AI infrastructure scoped to your business.",
+                    "Workflows, prompts, and assets you fully own.",
+                    "Integrations into the tools your team already uses.",
+                    "Maintenance by the same team that built it.",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <span className="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center mt-0.5">
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
+                      <span className="text-[15px] text-gray-700 leading-[1.6]">{item}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -386,7 +384,7 @@ export default function AISystemsPage() {
                 onClick={openModal}
                 className="btn-primary-light px-8 py-4 text-blue-700 rounded-xl font-semibold text-lg"
               >
-                Book a Free Discovery Call
+                Book a discovery call
               </button>
               <Link
                 href="/about"

@@ -4,7 +4,7 @@ export default function Problem() {
       number: "01",
       title: "The competitor you don't see",
       description:
-        "Somewhere out there, a business your size is quietly installing AI into theirs. They're cutting hours off operations, answering customers at 3am, and processing leads while you sleep. You won't notice them this quarter. You will in twelve months.",
+        "A business your size is quietly installing AI into theirs. You won't notice them this quarter. You will in twelve months.",
       stat: "12 mo",
       statLabel: "Until the gap shows up",
       accent: "from-rose-500 to-orange-500",
@@ -19,7 +19,7 @@ export default function Problem() {
       number: "02",
       title: "The bookmarks that don't help",
       description:
-        "You know AI matters. You've read the articles. You've bookmarked the tools. But there's a gap between knowing it matters and knowing where to start, what to trust, or who to hire.",
+        "You've read the articles. You've bookmarked the tools. There's a gap between knowing it matters and knowing where to start.",
       stat: "0",
       statLabel: "Tabs that ship a system",
       accent: "from-blue-500 to-indigo-500",
@@ -34,7 +34,7 @@ export default function Problem() {
       number: "03",
       title: "The widening gap",
       description:
-        "Businesses don't lose to better products anymore. They lose to better systems. The companies installing AI infrastructure now will own their markets in five years. The rest will be sold to them.",
+        "Businesses don't lose to better products anymore. They lose to better systems. The rest get acquired by them.",
       stat: "5 yr",
       statLabel: "Until markets consolidate",
       accent: "from-cyan-500 to-blue-600",
@@ -86,39 +86,35 @@ export default function Problem() {
               <div
                 className={`absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r ${problem.accent} transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out`}
               />
-              {/* Background watermark number (subtler) */}
-              <div className="absolute -top-1 right-3 text-[120px] sm:text-[140px] font-black leading-none text-gray-50 select-none pointer-events-none">
-                {problem.number}
-              </div>
 
-              <div className="relative z-10">
-                {/* Icon + label */}
-                <div className="flex items-center justify-between mb-6 sm:mb-7">
+              <div className="relative z-10 flex flex-col h-full">
+                {/* Icon + eyebrow */}
+                <div className="flex items-center gap-3 mb-7 sm:mb-8">
                   <div
-                    className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${problem.accent} text-white flex items-center justify-center shadow-lg shadow-blue-500/10`}
+                    className={`w-11 h-11 rounded-xl bg-gradient-to-br ${problem.accent} text-white flex items-center justify-center shadow-md shadow-blue-500/10`}
                   >
                     {problem.icon}
                   </div>
-                  <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.24em] text-gray-400">
+                  <span className="text-[10px] font-mono uppercase tracking-[0.24em] text-gray-400">
                     Shift {problem.number}
                   </span>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 leading-[1.25] mb-4">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 leading-[1.2] mb-3 tracking-[-0.01em]">
                   {problem.title}
                 </h3>
-                <p className="text-[15px] sm:text-base text-gray-600 leading-[1.7] mb-8">
+                <p className="text-[15px] text-gray-600 leading-[1.65] mb-8 flex-1">
                   {problem.description}
                 </p>
 
-                {/* Stat strip */}
-                <div className="flex items-end gap-4 pt-5 sm:pt-6 border-t border-gray-100">
+                {/* Stat strip — single focal point */}
+                <div className="flex items-end gap-4 pt-6 border-t border-gray-100">
                   <div
-                    className={`text-3xl sm:text-4xl font-black leading-none bg-gradient-to-r ${problem.accent} bg-clip-text text-transparent`}
+                    className={`text-4xl sm:text-5xl font-black leading-none bg-gradient-to-r ${problem.accent} bg-clip-text text-transparent`}
                   >
                     {problem.stat}
                   </div>
-                  <div className="text-[11px] sm:text-xs text-gray-500 leading-snug pb-1 max-w-[58%]">
+                  <div className="text-xs text-gray-500 leading-snug pb-1.5 max-w-[60%]">
                     {problem.statLabel}
                   </div>
                 </div>

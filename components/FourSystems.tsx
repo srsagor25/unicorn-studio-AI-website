@@ -10,7 +10,7 @@ export default function FourSystems() {
       isMain: true,
       title: "AI Business Process Automation",
       description:
-        "Onboarding, approvals, reporting, internal agents, tool integrations. Anything manual and repetitive in your operations. The work that shouldn't need a person, finally doesn't.",
+        "Anything manual and repetitive in your operations. The work that shouldn't need a person, finally doesn't.",
       keywords: ["Onboarding", "Approvals", "Reporting", "Internal agents"],
       icon: (
         <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -23,7 +23,7 @@ export default function FourSystems() {
       number: "02",
       title: "AI Marketing Systems",
       description:
-        "Social automation across LinkedIn, Facebook, Instagram, X and Reddit. Email engines that segment, send, and follow up on autopilot.",
+        "Social and email engines that segment, send, and follow up on autopilot. Across every channel that matters.",
       keywords: ["Social", "Email", "Content", "Distribution"],
       icon: (
         <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -35,7 +35,7 @@ export default function FourSystems() {
       number: "03",
       title: "AI Sales Systems",
       description:
-        "Lead qualification, follow-up automation, pipeline routing, and sales-handoff flows. Stop letting warm leads go cold.",
+        "Qualification, follow-up, and pipeline routing on autopilot. Stop letting warm leads go cold.",
       keywords: ["Qualification", "Follow-up", "Routing", "CRM"],
       icon: (
         <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -47,7 +47,7 @@ export default function FourSystems() {
       number: "04",
       title: "AI Communication Automation",
       description:
-        "WhatsApp, Discord, and Slack workflows. Conversational AI that responds, qualifies, routes, and escalates across every channel your business runs on.",
+        "Conversational AI across WhatsApp, Discord, and Slack. Responds, qualifies, routes, and escalates without missing a thread.",
       keywords: ["WhatsApp", "Slack", "Discord", "Inbox"],
       icon: (
         <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">

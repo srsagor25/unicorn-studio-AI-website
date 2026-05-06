@@ -17,13 +17,13 @@ export default function AISolutionsPage() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 sm:mb-8 leading-[1.1] tracking-tight">
-              Build AI Products That
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 sm:mb-8 leading-[1.05] tracking-[-0.02em]">
+              Build AI products that
               <br />
-              <span className="gradient-text-modern inline-block mt-2">Actually Solve Problems</span>
+              <span className="gradient-text-modern inline-block mt-2">actually solve problems.</span>
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              Turn complex business challenges into intelligent solutions. We build custom AI products that deliver real value, not just fancy demos.
+            <p className="text-lg sm:text-xl text-gray-600 leading-[1.65] max-w-2xl mx-auto">
+              Custom AI products that deliver real value, not just fancy demos.
             </p>
           </div>
         </div>
@@ -38,50 +38,46 @@ export default function AISolutionsPage() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-            {/* What we don't build */}
-            <div className="bg-red-50 p-8 rounded-2xl border-2 border-red-200">
-              <h3 className="text-2xl font-bold text-red-900 mb-6">What we don't build:</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <span className="text-red-500 text-xl mt-0.5">✕</span>
-                  <span className="text-gray-700">Generic ChatGPT wrappers that anyone could make</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-red-500 text-xl mt-0.5">✕</span>
-                  <span className="text-gray-700">"AI-powered" labels on basic if-then logic</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-red-500 text-xl mt-0.5">✕</span>
-                  <span className="text-gray-700">Solutions looking for problems to solve</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-red-500 text-xl mt-0.5">✕</span>
-                  <span className="text-gray-700">One-size-fits-all templates with AI buzzwords</span>
-                </li>
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+            <div className="bg-white p-8 rounded-2xl border border-gray-200">
+              <div className="text-[10px] font-mono uppercase tracking-[0.24em] text-rose-600 mb-3">What we don&apos;t build</div>
+              <ul className="space-y-3.5">
+                {[
+                  "Generic ChatGPT wrappers anyone could make.",
+                  "&ldquo;AI-powered&rdquo; labels on basic if-then logic.",
+                  "Solutions looking for problems to solve.",
+                  "One-size-fits-all templates with AI buzzwords.",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="flex-shrink-0 w-5 h-5 rounded-full bg-rose-50 text-rose-500 flex items-center justify-center mt-0.5">
+                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </span>
+                    <span className="text-[15px] text-gray-700 leading-[1.6]" dangerouslySetInnerHTML={{ __html: item }} />
+                  </li>
+                ))}
               </ul>
             </div>
 
-            {/* What we actually build */}
-            <div className="bg-green-50 p-8 rounded-2xl border-2 border-green-200">
-              <h3 className="text-2xl font-bold text-green-900 mb-6">What we actually build:</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <span className="text-green-500 text-xl mt-0.5">✓</span>
-                  <span className="text-gray-700">Custom AI architectures designed for your specific use case</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-green-500 text-xl mt-0.5">✓</span>
-                  <span className="text-gray-700">Intelligent systems that learn and improve from user interactions</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-green-500 text-xl mt-0.5">✓</span>
-                  <span className="text-gray-700">AI that enhances human capabilities, not replaces them</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-green-500 text-xl mt-0.5">✓</span>
-                  <span className="text-gray-700">Products where AI creates genuine competitive advantage</span>
-                </li>
+            <div className="bg-white p-8 rounded-2xl border border-gray-200">
+              <div className="text-[10px] font-mono uppercase tracking-[0.24em] text-emerald-600 mb-3">What we actually build</div>
+              <ul className="space-y-3.5">
+                {[
+                  "Custom AI architectures for your use case.",
+                  "Systems that learn and improve from real usage.",
+                  "AI that enhances human capability, not replaces it.",
+                  "Products where AI creates real competitive advantage.",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center mt-0.5">
+                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                    <span className="text-[15px] text-gray-700 leading-[1.6]">{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -373,9 +369,9 @@ export default function AISolutionsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={openModal}
-              className="btn-primary-light px-8 py-4 text-blue-700 rounded-xl font-semibold text-lg"
+              className="btn-primary-light px-8 py-4 text-blue-700 rounded-xl font-semibold text-base sm:text-lg"
             >
-              LET'S BUILD
+              Book a discovery call
             </button>
           </div>
         </div>

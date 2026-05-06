@@ -58,7 +58,7 @@ export default function Guarantee() {
             <span className="gradient-text-modern"> or we work free.</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-[1.6] px-4">
-            We agree on scope and timeline upfront, in writing, before any build begins. If we don&apos;t deliver what we agreed to, when we agreed to:
+            Scope and timeline agreed in writing, before any build. If we miss what we agreed to:
           </p>
         </div>
 
@@ -73,24 +73,17 @@ export default function Guarantee() {
               <div
                 className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${g.accent}`}
               />
-              {/* Watermark number */}
-              <div className="absolute -bottom-6 -right-2 text-[160px] font-black leading-none text-gray-50 select-none pointer-events-none">
-                {g.number}
-              </div>
 
               <div className="relative z-10 flex flex-col h-full">
                 <div
-                  className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${g.accent} text-white flex items-center justify-center shadow-lg shadow-blue-500/20 mb-7`}
+                  className={`w-12 h-12 rounded-xl bg-gradient-to-br ${g.accent} text-white flex items-center justify-center shadow-md shadow-blue-500/15 mb-6`}
                 >
                   {g.icon}
                 </div>
-                <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.24em] text-gray-400 mb-3">
-                  Promise {g.number}
-                </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 leading-[1.25] mb-4">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 leading-[1.2] mb-3 tracking-[-0.01em]">
                   {g.title}
                 </h3>
-                <p className="text-[15px] sm:text-base text-gray-600 leading-[1.7]">
+                <p className="text-[15px] text-gray-600 leading-[1.65]">
                   {g.body}
                 </p>
               </div>
@@ -119,8 +112,8 @@ export default function Guarantee() {
             </div>
             {/* Right copy */}
             <div className="p-6 sm:p-8 flex items-center">
-              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                We guarantee the system is built, integrated, and operational as scoped. We don&apos;t guarantee business outcomes. Those depend on your strategy, your offer, and the inputs you feed it. We guarantee the infrastructure works. The rest is up to you.
+              <p className="text-[15px] sm:text-base text-gray-700 leading-[1.65]">
+                We guarantee the system is built, integrated, and operational as scoped. We don&apos;t guarantee business outcomes. Those depend on your strategy and what you feed it.
               </p>
             </div>
           </div>

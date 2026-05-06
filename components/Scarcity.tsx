@@ -12,7 +12,7 @@ const reasons = [
   {
     eyebrow: "Pricing",
     title: "Today's rate is locked for the lifetime of the engagement.",
-    body: "As we scale and the demand for AI systems compounds, our rates rise. Clients who sign now keep the price they signed at — for as long as we work together. New clients later don't.",
+    body: "As we scale and demand compounds, our rates rise. Clients who sign now keep their rate for as long as we work together. New clients later don't.",
     metric: { value: "Locked", label: "for the lifetime" },
   },
   {

@@ -141,8 +141,8 @@ export default function AISaaSPage() {
                 <br />
                 <span className="gradient-text-modern inline-block mt-2">from scratch.</span>
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-[1.6] max-w-3xl mx-auto">
-                Product strategy, design, engineering, and AI integration, under one roof. We ship real software you own, on infrastructure you control, in a timeline measured in weeks.
+              <p className="text-lg sm:text-xl text-gray-600 leading-[1.65] max-w-2xl mx-auto">
+                Strategy, design, engineering, and AI integration under one roof. Real software you own, in weeks.
               </p>
             </div>
           </div>

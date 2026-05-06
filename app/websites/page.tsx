@@ -254,8 +254,8 @@ export default function WebsitePage() {
                 <br />
                 <span className="gradient-text-modern inline-block mt-2">as seriously as the tech.</span>
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-[1.6] max-w-3xl mx-auto">
-                Three tiers, three platforms, three engagement shapes. We design, build, and ship the kind of site AI founders actually need, on the CMS that fits how your team works.
+              <p className="text-lg sm:text-xl text-gray-600 leading-[1.65] max-w-2xl mx-auto">
+                Three tiers, three platforms, fixed scope. The kind of site AI founders actually need, on the CMS that fits your team.
               </p>
 
               {/* Hero stat strip */}
