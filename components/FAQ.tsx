@@ -24,43 +24,44 @@ type FAQProps = {
   ctaHref?: string;
 };
 
-const defaultFaqs: FAQItem[] = [
+/**
+ * AI Systems FAQ — also used as the default on the homepage.
+ * Exported so the AI Systems page can reuse the same source of truth.
+ */
+export const aiSystemsFaqs: FAQItem[] = [
   {
-    question: "How quickly can we launch?",
+    question: "Which of the four systems should I pick first?",
     answer:
-      "Most MVPs ship in 4 to 8 weeks. Websites in 1 to 4 weeks. We've launched focused products in as fast as 10 days. Every engagement has a fixed scope and a stated turnaround before we start.",
+      "Whichever bottleneck is hurting growth most right now. Most clients start with sales or communication, since those tend to leak revenue first. We’ll map your business on the discovery call and recommend the order.",
   },
   {
-    question: "Do you handle everything from branding to development?",
+    question: "How quickly does an AI system go live?",
     answer:
-      "Yes. We're a full-service AI SaaS studio. You work with one team from strategy through launch, ensuring consistency and efficiency across every stage.",
+      "4 to 8 weeks depending on system complexity and how clean your existing data and tools are. We commit to a fixed timeline and a fixed scope before any build begins.",
   },
   {
-    question: "What if I'm not technical?",
+    question: "Will my data stay private?",
     answer:
-      "Perfect. We translate between business and technology. You focus on the problem and customers. We handle everything else.",
+      "Yes. We deploy to your cloud, your accounts, and your secrets manager. Nothing routes through our infrastructure. We’ll sign an NDA before scoping if you need it.",
   },
   {
-    question: "Can you work with our existing brand or code?",
+    question: "Will I own the workflows and prompts?",
     answer:
-      "Absolutely. We can work within existing brand guidelines or codebases. We're comfortable inheriting and improving what you've already built.",
+      "Every workflow, prompt, integration, and asset we build is yours. Forever. Even if you fire us tomorrow, the system keeps running and your team can extend it.",
   },
   {
-    question: "What about after launch?",
+    question: "What if the system needs changes after launch?",
     answer:
-      "We offer ongoing partnerships for updates, scaling, and feature development. Or we can hand off to your team with comprehensive documentation.",
+      "Maintenance is optional and scoped per request. Most clients run lightweight after the first 30 days. Your team can extend it themselves, or come back to us when you need bigger changes.",
   },
   {
-    question: "Which AI models do you work with?",
+    question: "Do you guarantee outcomes?",
     answer:
-      "All major providers: OpenAI, Anthropic, Google, plus open-source models. We choose based on your specific needs, latency, and budget.",
-  },
-  {
-    question: "Why “Unicorn Studio”?",
-    answer:
-      "We help build the rare ones: products that achieve product-market fit, sustainable growth, and real impact. Your unicorn doesn't need a billion-dollar valuation. It needs to solve real problems profitably.",
+      "We guarantee the system is built, integrated, and operational as scoped. We don’t guarantee business outcomes. Those depend on your strategy and the inputs you feed it.",
   },
 ];
+
+const defaultFaqs: FAQItem[] = aiSystemsFaqs;
 
 export default function FAQ({
   faqs = defaultFaqs,
