@@ -23,6 +23,14 @@ const BUDGETS = [
   "Not sure yet",
 ];
 
+// Public Web3Forms access key. Configured in the Web3Forms dashboard
+// to deliver to saidur@unicornstudio.io. Safe to expose client-side
+// (Web3Forms keys are designed for static, client-side usage with
+// rate limiting + spam protection on their end).
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "";
+
+type Status = "idle" | "loading" | "success" | "error";
+
 export default function CTA() {
   const { openModal } = useCalendly();
   const [service, setService] = useState("");
@@ -30,23 +38,84 @@ export default function CTA() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
-  const submit = (e: React.FormEvent) => {
+  const resetForm = () => {
+    setService("");
+    setBudget("");
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
+
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = `New inquiry${service ? `, ${service}` : ""}`;
-    const lines = [
-      `Name: ${name || "(not provided)"}`,
-      `Email: ${email || "(not provided)"}`,
-      `Service: ${service || "(not selected)"}`,
-      `Budget: ${budget || "(not selected)"}`,
-      "",
-      "Project notes:",
-      message || "(none)",
-    ];
-    const mailto = `mailto:saidur@unicornstudio.io?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(lines.join("\n"))}`;
-    window.location.href = mailto;
+    setStatus("loading");
+    setErrorMessage("");
+
+    if (!WEB3FORMS_KEY) {
+      // Fallback: drop into the user's mail client so the site still works
+      // before the access key has been set in production env vars.
+      const subject = `New inquiry${service ? `, ${service}` : ""}`;
+      const lines = [
+        `Name: ${name || "(not provided)"}`,
+        `Email: ${email || "(not provided)"}`,
+        `Service: ${service || "(not selected)"}`,
+        `Budget: ${budget || "(not selected)"}`,
+        "",
+        "Project notes:",
+        message || "(none)",
+      ];
+      window.location.href = `mailto:saidur@unicornstudio.io?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(lines.join("\n"))}`;
+      setStatus("idle");
+      return;
+    }
+
+    try {
+      const payload = {
+        access_key: WEB3FORMS_KEY,
+        subject: `New inquiry${service ? `, ${service}` : ""} from ${name || "the website"}`,
+        from_name: name || "Unicorn Studio website",
+        replyto: email,
+        // Form data shown in the email body
+        Name: name,
+        Email: email,
+        Service: service,
+        Budget: budget,
+        "Project notes": message,
+        // Honeypot anti-spam (kept empty by real users)
+        botcheck: "",
+      };
+
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = (await res.json()) as { success: boolean; message?: string };
+
+      if (data.success) {
+        setStatus("success");
+        resetForm();
+      } else {
+        setStatus("error");
+        setErrorMessage(data.message ?? "Couldn't send right now. Please try again.");
+      }
+    } catch (err) {
+      setStatus("error");
+      setErrorMessage(
+        err instanceof Error
+          ? err.message
+          : "Couldn't reach the server. Please try again or email saidur@unicornstudio.io directly."
+      );
+    }
   };
 
   return (
@@ -96,7 +165,7 @@ export default function CTA() {
 
             {/* Quick action: WhatsApp */}
             <a
-              href="https://wa.me/?text=Hi%20Unicorn%20Studio%20%E2%80%94%20I%27d%20like%20to%20chat%20about%20an%20AI%20system."
+              href="https://wa.me/12267035175?text=Hi%20Saidur%2C%20I%27d%20like%20to%20chat%20about%20an%20AI%20project."
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-3 px-5 py-3 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors font-semibold text-[15px]"
@@ -278,22 +347,87 @@ export default function CTA() {
               {/* Submit */}
               <button
                 type="submit"
-                className="btn-primary group w-full px-6 py-4 text-white rounded-xl font-semibold text-base inline-flex items-center justify-center gap-2"
+                disabled={status === "loading"}
+                className="btn-primary group w-full px-6 py-4 text-white rounded-xl font-semibold text-base inline-flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                <span className="relative z-10">Submit</span>
-                <svg
-                  className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
+                {status === "loading" ? (
+                  <>
+                    <svg
+                      className="relative z-10 w-5 h-5 animate-spin"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="3"
+                        strokeOpacity="0.25"
+                        fill="none"
+                      />
+                      <path
+                        d="M22 12a10 10 0 0 0-10-10"
+                        stroke="currentColor"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        fill="none"
+                      />
+                    </svg>
+                    <span className="relative z-10">Sending…</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="relative z-10">Send message</span>
+                    <svg
+                      className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </>
+                )}
               </button>
 
-              <p className="text-xs text-gray-500 text-center pt-1">
-                We typically reply within 2 hours during business hours.
-              </p>
+              {/* Status feedback */}
+              {status === "success" && (
+                <div
+                  role="status"
+                  className="rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800 flex items-start gap-2.5"
+                >
+                  <svg className="w-5 h-5 flex-shrink-0 mt-0.5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>
+                    Message sent. Saidur usually replies within 2 hours during business hours.
+                  </span>
+                </div>
+              )}
+              {status === "error" && (
+                <div
+                  role="alert"
+                  className="rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-800 flex items-start gap-2.5"
+                >
+                  <svg className="w-5 h-5 flex-shrink-0 mt-0.5 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v3m0 4h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z" />
+                  </svg>
+                  <span>
+                    {errorMessage || "Couldn't send right now."} You can also email{" "}
+                    <a href="mailto:saidur@unicornstudio.io" className="underline underline-offset-2 font-semibold">
+                      saidur@unicornstudio.io
+                    </a>{" "}
+                    directly.
+                  </span>
+                </div>
+              )}
+
+              {status !== "success" && status !== "error" && (
+                <p className="text-xs text-gray-500 text-center pt-1">
+                  We typically reply within 2 hours during business hours.
+                </p>
+              )}
             </div>
           </form>
         </div>
