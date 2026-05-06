@@ -64,22 +64,19 @@ export default function Footer() {
               </a>
             </div>
 
-            {/* Link columns aligned to the same baseline */}
+            {/* Link columns — bold headings, items flush left, consistent spacing */}
             <div className="lg:col-span-3">
-              <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] text-gray-500 mb-5">
+              <h4 className="text-base font-bold text-gray-900 mb-5 sm:mb-6">
                 Services
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-3.5">
                 {navigation.services.map((item) => (
                   <li key={item.name}>
                     <a
                       href={item.href}
-                      className="text-sm text-gray-700 hover:text-blue-600 transition-colors inline-flex items-center gap-2 group"
+                      className="text-[15px] text-gray-600 hover:text-blue-600 transition-colors"
                     >
-                      <svg className="w-3.5 h-3.5 text-blue-500 opacity-0 -ml-1 group-hover:opacity-100 group-hover:ml-0 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                      <span>{item.name}</span>
+                      {item.name}
                     </a>
                   </li>
                 ))}
@@ -87,20 +84,17 @@ export default function Footer() {
             </div>
 
             <div className="lg:col-span-2">
-              <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] text-gray-500 mb-5">
+              <h4 className="text-base font-bold text-gray-900 mb-5 sm:mb-6">
                 Company
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-3.5">
                 {navigation.company.map((item) => (
                   <li key={item.name}>
                     <a
                       href={item.href}
-                      className="text-sm text-gray-700 hover:text-blue-600 transition-colors inline-flex items-center gap-2 group"
+                      className="text-[15px] text-gray-600 hover:text-blue-600 transition-colors"
                     >
-                      <svg className="w-3.5 h-3.5 text-blue-500 opacity-0 -ml-1 group-hover:opacity-100 group-hover:ml-0 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                      <span>{item.name}</span>
+                      {item.name}
                     </a>
                   </li>
                 ))}
@@ -108,22 +102,19 @@ export default function Footer() {
             </div>
 
             <div className="lg:col-span-2">
-              <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] text-gray-500 mb-5">
+              <h4 className="text-base font-bold text-gray-900 mb-5 sm:mb-6">
                 Social
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-3.5">
                 {navigation.social.map((item) => (
                   <li key={item.name}>
                     <a
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-gray-700 hover:text-blue-600 transition-colors inline-flex items-center gap-2 group"
+                      className="text-[15px] text-gray-600 hover:text-blue-600 transition-colors"
                     >
-                      <svg className="w-3.5 h-3.5 text-blue-500 opacity-0 -ml-1 group-hover:opacity-100 group-hover:ml-0 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                      <span>{item.name}</span>
+                      {item.name}
                     </a>
                   </li>
                 ))}
