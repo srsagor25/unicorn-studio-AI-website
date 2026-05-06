@@ -2,9 +2,43 @@
 
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
+import FAQ from '@/components/FAQ';
 
 import FlipCard from '@/components/FlipCard';
 import { useCalendly } from '@/components/CalendlyProvider';
+
+const brandingFaqs = [
+  {
+    question: "What's the typical timeline?",
+    answer:
+      "Roughly 2 weeks for a Brand Starter, 4 weeks for a Full Brand System. We commit to a fixed turnaround upfront and run weekly check-ins to keep you aligned.",
+  },
+  {
+    question: "How many concept rounds do we get?",
+    answer:
+      "Two structured revision rounds per tier. We deliver each round with a written rationale so feedback is concrete, not subjective.",
+  },
+  {
+    question: "What's included in the full brand system?",
+    answer:
+      "Logomark and wordmark, colour palette, typography, brand voice and messaging guide, motion notes, and digital templates for deck, doc, and social. All source files included.",
+  },
+  {
+    question: "Will we own the source files?",
+    answer:
+      "Yes. Every working file is handed over: Figma, exports in every format you&apos;ll need, motion source where applicable. No platform lock-in, no licensing strings.",
+  },
+  {
+    question: "Do you handle the website too?",
+    answer:
+      "Yes. Branding pairs naturally with our website service, so brand and site stay consistent and the handoff between them disappears entirely.",
+  },
+  {
+    question: "Can you work with our existing brand?",
+    answer:
+      "Yes. We can extend, refresh, or rebuild around what you already have. We&apos;ll tell you on the discovery call which is the right call for where you are.",
+  },
+];
 
 export default function BrandingPage() {
   const { openModal } = useCalendly();
@@ -527,6 +561,15 @@ export default function BrandingPage() {
           </div>
         </section>
 
+
+        {/* FAQ */}
+        <FAQ
+          faqs={brandingFaqs}
+          eyebrow="Branding FAQ"
+          headingLead="Common questions"
+          headingHighlight="about branding."
+          lead="The ones founders ask before scoping a brand build. Don&rsquo;t see yours?"
+        />
 
         {/* CTA Section */}
         <section id="contact" className="py-16 sm:py-20 bg-gradient-to-br from-blue-600 to-indigo-600">

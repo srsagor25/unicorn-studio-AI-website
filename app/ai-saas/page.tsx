@@ -2,8 +2,42 @@
 
 import TopNavigation from "@/components/TopNavigation";
 import Footer from "@/components/Footer";
+import FAQ from "@/components/FAQ";
 import Link from "next/link";
 import { useCalendly } from "@/components/CalendlyProvider";
+
+const aiSaasFaqs = [
+  {
+    question: "What's the typical timeline for an AI SaaS MVP?",
+    answer:
+      "4 to 8 weeks for an MVP, 10 to 14 weeks for a full multi-tenant build. Both are fixed-scope and fixed-timeline. Discovery, design, and architecture happen in the first two weeks before any production code is written.",
+  },
+  {
+    question: "Will I own the code and infrastructure?",
+    answer:
+      "Yes. Code lives in your GitHub from day one. Production runs in your cloud account, on your domain, with your secrets. We hand over keys, never gate access, and don&apos;t insert proprietary middleware between you and your stack.",
+  },
+  {
+    question: "What stack do you use?",
+    answer:
+      "Default: Next.js + TypeScript + Tailwind on the frontend, Node or Python on the backend with Postgres + Redis, OpenAI / Anthropic / Google for AI providers, Clerk or Supabase for auth, Stripe for billing, Vercel or AWS for hosting. We&apos;ll change parts that don&apos;t fit and explain the tradeoffs.",
+  },
+  {
+    question: "How do you handle model swaps?",
+    answer:
+      "Every AI call sits behind a single interface in your codebase. Swapping GPT for Claude, or to a fine-tune, is a config change rather than a rewrite. You stay portable as the model landscape moves.",
+  },
+  {
+    question: "What about token cost economics?",
+    answer:
+      "We model cost-per-user before architecture, with caching, context sizing, and routing built in to protect margins. You launch with a per-user cost dashboard so you can see margins at every tier.",
+  },
+  {
+    question: "Do you stay on after launch?",
+    answer:
+      "30 days of stabilisation are included by default. After that, optional ongoing partnership for new features, model upgrades, and scale work. Or your team can take it from here with the documentation we hand over.",
+  },
+];
 
 const stack = [
   {
@@ -359,6 +393,15 @@ export default function AISaaSPage() {
             </div>
           </div>
         </section>
+
+        {/* FAQ */}
+        <FAQ
+          faqs={aiSaasFaqs}
+          eyebrow="AI SaaS FAQ"
+          headingLead="Common questions"
+          headingHighlight="about building AI SaaS."
+          lead="The ones founders ask before kicking off a build. Don&rsquo;t see yours?"
+        />
 
         {/* CTA */}
         <section id="contact" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-blue-600 to-indigo-600">

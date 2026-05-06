@@ -2,8 +2,42 @@
 
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
+import FAQ from '@/components/FAQ';
 
 import { useCalendly } from '@/components/CalendlyProvider';
+
+const aiSolutionsFaqs = [
+  {
+    question: "How do you validate viability before building?",
+    answer:
+      "Discovery, then a working prototype on real data inside three weeks. We don&apos;t commit to a full build until we&apos;ve seen the model and the workflow hold up against the real edge cases of your business.",
+  },
+  {
+    question: "What's the model selection process?",
+    answer:
+      "Eval-driven. We benchmark candidate models against your specific tasks, with a clear cost-vs-quality tradeoff per option. The choice gets documented and can be swapped later as new models ship.",
+  },
+  {
+    question: "How do you handle evaluation and quality?",
+    answer:
+      "Eval harness from week one, regression suites on the prompts that drive business outcomes, and quality dashboards in production. You&apos;ll know if quality drifts before your users do.",
+  },
+  {
+    question: "What's a typical project size?",
+    answer:
+      "Three shapes: a 3-week proof of concept, an 8-week complete AI product, or a six-month transformation across multiple workflows. Picked on the discovery call based on what you&apos;re trying to validate.",
+  },
+  {
+    question: "Will I own the architecture and IP?",
+    answer:
+      "Fully. Source code, prompts, fine-tunes, and infrastructure config are all yours. We deploy to your cloud, your accounts, and hand over keys at launch.",
+  },
+  {
+    question: "Do you support post-launch optimisation?",
+    answer:
+      "90 days of stabilisation are included on Complete and Transformation engagements. Beyond that, optional ongoing optimisation for prompt tuning, model upgrades, and new features.",
+  },
+];
 
 export default function AISolutionsPage() {
   const { openModal } = useCalendly();
@@ -358,6 +392,15 @@ export default function AISolutionsPage() {
 
 
       {/* CTA Section */}
+      {/* FAQ */}
+      <FAQ
+        faqs={aiSolutionsFaqs}
+        eyebrow="AI Solutions FAQ"
+        headingLead="Common questions"
+        headingHighlight="about AI solutions."
+        lead="The ones founders ask before committing to a custom AI build. Don&rsquo;t see yours?"
+      />
+
       <section id="contact" className="py-16 sm:py-20 bg-gradient-to-br from-blue-600 to-indigo-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">

@@ -2,8 +2,42 @@
 
 import TopNavigation from "@/components/TopNavigation";
 import Footer from "@/components/Footer";
+import FAQ from "@/components/FAQ";
 import Link from "next/link";
 import { useCalendly } from "@/components/CalendlyProvider";
+
+const aiSystemsFaqs = [
+  {
+    question: "Which of the four systems should I pick first?",
+    answer:
+      "Whichever bottleneck is hurting growth most right now. Most clients start with sales or communication, since those tend to leak revenue first. We&apos;ll map your business on the discovery call and recommend the order.",
+  },
+  {
+    question: "How quickly does an AI system go live?",
+    answer:
+      "4 to 8 weeks depending on system complexity and how clean your existing data and tools are. We commit to a fixed timeline and a fixed scope before any build begins.",
+  },
+  {
+    question: "Will my data stay private?",
+    answer:
+      "Yes. We deploy to your cloud, your accounts, and your secrets manager. Nothing routes through our infrastructure. We&apos;ll sign an NDA before scoping if you need it.",
+  },
+  {
+    question: "Will I own the workflows and prompts?",
+    answer:
+      "Every workflow, prompt, integration, and asset we build is yours. Forever. Even if you fire us tomorrow, the system keeps running and your team can extend it.",
+  },
+  {
+    question: "What if the system needs changes after launch?",
+    answer:
+      "Maintenance is optional and scoped per request. Most clients run lightweight after the first 30 days. Your team can extend it themselves, or come back to us when you need bigger changes.",
+  },
+  {
+    question: "Do you guarantee outcomes?",
+    answer:
+      "We guarantee the system is built, integrated, and operational as scoped. We don&apos;t guarantee business outcomes. Those depend on your strategy and the inputs you feed it.",
+  },
+];
 
 export default function AISystemsPage() {
   const { openModal } = useCalendly();
@@ -369,6 +403,15 @@ export default function AISystemsPage() {
             </p>
           </div>
         </section>
+
+        {/* FAQ */}
+        <FAQ
+          faqs={aiSystemsFaqs}
+          eyebrow="AI Systems FAQ"
+          headingLead="Common questions"
+          headingHighlight="about AI systems."
+          lead="The ones founders ask us before booking a discovery call. Don&rsquo;t see yours?"
+        />
 
         {/* CTA */}
         <section id="contact" className="py-16 sm:py-20 bg-gradient-to-br from-blue-600 to-indigo-600">

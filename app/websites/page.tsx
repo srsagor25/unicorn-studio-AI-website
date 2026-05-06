@@ -3,7 +3,41 @@
 import { useState } from "react";
 import TopNavigation from "@/components/TopNavigation";
 import Footer from "@/components/Footer";
+import FAQ from "@/components/FAQ";
 import { useCalendly } from "@/components/CalendlyProvider";
+
+const websiteFaqs = [
+  {
+    question: "WordPress, Webflow, or Framer — which should I pick?",
+    answer:
+      "Depends on team size, content velocity, and design ambition. WordPress when content updates are weekly. Webflow when marketing wants to ship without involving engineering. Framer when motion and craft are the point. We&apos;ll suggest the right one on the discovery call.",
+  },
+  {
+    question: "How long does a build take?",
+    answer:
+      "From a few days for a single landing page to roughly four weeks for a 10 to 15 page marketing site. Every tier has a stated turnaround, and we&apos;ve never missed one across 460+ projects.",
+  },
+  {
+    question: "What's included in every project?",
+    answer:
+      "Source files (Figma + the build platform), fully responsive design, two structured revision rounds, dedicated Slack channel, hosting setup, basic on-page SEO, and a launch kit. The boring things, handled.",
+  },
+  {
+    question: "Can you help with copy?",
+    answer:
+      "Yes. Copywriting is an optional add-on at any tier — conversion-focused copy written specifically for AI SaaS buyers. Bundle it with the build or scope it standalone.",
+  },
+  {
+    question: "What if I want changes after launch?",
+    answer:
+      "Optional monthly maintenance covers platform updates, weekly backups, uptime and security monitoring, performance scans, plus a fixed number of change requests per month.",
+  },
+  {
+    question: "Is there a guarantee?",
+    answer:
+      "Love it, or we redo it. If you&apos;re not happy with the first deliverable, we redo it from scratch. If the launched site doesn&apos;t convert at the category baseline, we refund. Used twice across 460+ projects.",
+  },
+];
 
 type Tier = {
   id: "standard" | "premium" | "elite";
@@ -680,6 +714,15 @@ export default function WebsitePage() {
             </div>
           </div>
         </section>
+
+        {/* FAQ */}
+        <FAQ
+          faqs={websiteFaqs}
+          eyebrow="Website FAQ"
+          headingLead="Common questions"
+          headingHighlight="about the website service."
+          lead="The ones founders ask before kicking off a build. Don&rsquo;t see yours?"
+        />
 
         {/* CTA */}
         <section id="contact" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-blue-600 to-indigo-600">

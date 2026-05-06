@@ -2,6 +2,40 @@
 
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
+import FAQ from '@/components/FAQ';
+
+const aiIntegrationsFaqs = [
+  {
+    question: "Can you work with our existing codebase?",
+    answer:
+      "Yes. We work in your repo, your stack, your conventions. We&apos;ll send a few PRs in the first week so you can see how we write code before committing to a full integration.",
+  },
+  {
+    question: "Which AI providers do you integrate?",
+    answer:
+      "OpenAI, Anthropic, Google, plus open-source models via Together or Replicate. We pick based on quality, latency, and cost for your specific workflow, and keep the choice swappable.",
+  },
+  {
+    question: "How do you handle PII and compliance?",
+    answer:
+      "We design for SOC 2, GDPR, and data residency from day one: prompt scrubbing, audit logs, region-locked deployments, and zero-retention provider configs where supported.",
+  },
+  {
+    question: "What about runaway token costs?",
+    answer:
+      "We size context, cache aggressively, and route to smaller models on the hot paths. Every integration ships with a per-user cost dashboard so you see margins, not just usage.",
+  },
+  {
+    question: "How long does a typical integration take?",
+    answer:
+      "A focused integration on one to three features ships in roughly 4 weeks. A comprehensive cross-product push runs around 8 weeks. Both fixed-scope, both quoted before we start.",
+  },
+  {
+    question: "Do you offer post-launch support?",
+    answer:
+      "Optional. Most clients run a light monthly engagement after launch for prompt tuning, model upgrades, and new feature rollouts. Or your team can take it from there.",
+  },
+];
 
 import { useCalendly } from '@/components/CalendlyProvider';
 
@@ -401,6 +435,15 @@ export default function AIIntegrationsPage() {
           </div>
         </section>
 
+
+        {/* FAQ */}
+        <FAQ
+          faqs={aiIntegrationsFaqs}
+          eyebrow="AI Integrations FAQ"
+          headingLead="Common questions"
+          headingHighlight="about AI integrations."
+          lead="The ones product teams ask before signing off on AI work. Don&rsquo;t see yours?"
+        />
 
         {/* CTA Section */}
         <section id="contact" className="py-16 sm:py-20 bg-gradient-to-br from-blue-600 to-indigo-600">
