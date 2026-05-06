@@ -53,7 +53,7 @@ export default function TopNavigation() {
   const serviceLinks = [
     { name: "AI Systems", href: "/ai-systems", description: "Custom AI automation built for your business" },
     { name: "AI Integrations", href: "/ai-integrations", description: "Add AI to your existing product" },
-    { name: "AI Solutions", href: "/ai-solutions", description: "Intelligent products that solve real problems" },
+    { name: "AI Solutions", href: "/ai-solutions", description: "Intelligent AI Solutions that solve real problems" },
     { name: "AI SaaS", href: "/ai-saas", description: "From first commit to full-scale AI SaaS product" },
     { name: "Website", href: "/websites", description: "Conversion-focused sites for AI SaaS founders" },
     { name: "Branding", href: "/branding", description: "Brand identity built for AI SaaS products" },
