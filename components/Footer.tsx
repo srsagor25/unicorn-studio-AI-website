@@ -53,7 +53,7 @@ export default function Footer() {
               {/* Contact */}
               <div className="space-y-3">
                 <a
-                  href="mailto:contact@unicornstudio.io"
+                  href="mailto:saidur@unicornstudio.io"
                   className="flex items-center gap-3 text-sm text-gray-600 hover:text-blue-600 transition-colors group"
                 >
                   <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
@@ -61,7 +61,7 @@ export default function Footer() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
-                  <span>contact@unicornstudio.io</span>
+                  <span>saidur@unicornstudio.io</span>
                 </a>
               </div>
             </div>

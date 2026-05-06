@@ -41,7 +41,7 @@ export default function CTA() {
       "Project notes:",
       message || "(none)",
     ];
-    const mailto = `mailto:contact@unicornstudio.io?subject=${encodeURIComponent(
+    const mailto = `mailto:saidur@unicornstudio.io?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(lines.join("\n"))}`;
     window.location.href = mailto;
@@ -120,13 +120,13 @@ export default function CTA() {
                 <span className="underline-offset-4 hover:underline">Or book a 30-min discovery call</span>
               </button>
               <a
-                href="mailto:contact@unicornstudio.io"
+                href="mailto:saidur@unicornstudio.io"
                 className="inline-flex items-center gap-2 hover:text-gray-900 transition-colors w-fit"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <span className="underline-offset-4 hover:underline">contact@unicornstudio.io</span>
+                <span className="underline-offset-4 hover:underline">saidur@unicornstudio.io</span>
               </a>
             </div>
           </div>
