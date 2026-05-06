@@ -47,7 +47,7 @@ export default function Footer() {
                 />
               </a>
               <p className="text-[15px] text-gray-600 leading-[1.7] mb-6 max-w-md">
-                A specialist studio for AI SaaS founders. AI Systems, AI Solutions, and full AI SaaS builds, plus the website and brand to launch each one credibly. One team, source files yours.
+                Trusted AI integration partner for businesses. AI Systems, AI Solutions, and full AI SaaS builds, plus the website and brand to launch each one credibly.
               </p>
 
               {/* Contact */}
