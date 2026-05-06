@@ -5,23 +5,15 @@ import TopNavigation from "@/components/TopNavigation";
 import Footer from "@/components/Footer";
 import { useCalendly } from "@/components/CalendlyProvider";
 
-type PriceRow = {
-  label: string;
-  single: string;
-  upTo5: string;
-  fiveToTen: string;
-  tenToFifteen: string;
-  perPage?: string;
-  turnaround: string;
-};
-
 type Tier = {
   id: "standard" | "premium" | "elite";
   name: string;
   symbol: string;
   tagline: string;
   highlight?: boolean;
-  rows: PriceRow[];
+  includes: string[];
+  turnaround: string;
+  bestFor: string;
 };
 
 type PackageDef = {
@@ -29,90 +21,117 @@ type PackageDef = {
   name: string;
   shortName: string;
   description: string;
-  startsAt: string;
   badge?: string;
   bestFor: string;
   tiers: Tier[];
 };
 
-// Prices derived from base white-label rates with a 40% uplift for direct clients,
-// rounded to clean retail figures.
 const packages: PackageDef[] = [
   {
     id: "design",
     name: "Website Design",
     shortName: "Design only",
     description:
-      "Pixel-perfect Figma designs of every page, every breakpoint. You take the file to your own dev team or give it back to us to build.",
-    startsAt: "From $245",
-    bestFor: "Founders who already have a developer or design system, and just need a website designer for the next funding-grade marketing site.",
+      "Pixel-perfect Figma designs of every page, every breakpoint. You hand the file to your own dev team or come back to us to build it.",
+    bestFor:
+      "Founders who already have a developer or design system, and need a designer who actually understands how AI SaaS sites convert.",
     tiers: [
       {
         id: "standard",
         name: "Standard",
         symbol: "⚡",
-        tagline: "Template layout · clean colours, type, and spacing",
-        rows: [
-          { label: "Single page", single: "$245", upTo5: "$700", fiveToTen: "$980", tenToFifteen: "$1,190", perPage: "$98 / page", turnaround: "2 to 3 days" },
+        tagline: "Template-led layout, clean type, considered spacing",
+        includes: [
+          "Home + key sub-pages",
+          "Mobile, tablet, desktop frames",
+          "Brand colours and typography applied",
+          "Component library, ready to dev",
         ],
+        turnaround: "2 to 5 days",
+        bestFor: "A clean, modern marketing site. No bells, no whistles.",
       },
       {
         id: "premium",
         name: "Premium",
         symbol: "✦",
-        tagline: "Custom layout · brand typography · wireframes",
+        tagline: "Custom layout, brand typography, wireframes, prototype",
         highlight: true,
-        rows: [
-          { label: "Single page", single: "$490", upTo5: "$1,470", fiveToTen: "$1,960", tenToFifteen: "$2,450", perPage: "$196 / page", turnaround: "3 to 5 days" },
+        includes: [
+          "Custom layout for every page",
+          "Wireframes and clickable prototype",
+          "Light micro-interactions",
+          "CRM and form integrations mapped out",
         ],
+        turnaround: "5 to 10 days",
+        bestFor: "Most AI SaaS founders. Where conversion design meets a brand that actually feels like yours.",
       },
       {
         id: "elite",
         name: "Elite",
         symbol: "♛",
-        tagline: "Art direction · illustration · motion · brand book",
-        rows: [
-          { label: "Single page", single: "$910", upTo5: "$2,730", fiveToTen: "$3,710", tenToFifteen: "$4,690", perPage: "$350 / page", turnaround: "5 to 7 days" },
+        tagline: "Art direction, illustration, motion, full brand book",
+        includes: [
+          "Bespoke art direction",
+          "Custom illustrations and motion concepts",
+          "Full brand book delivered alongside",
+          "High-fidelity prototype with animation",
         ],
+        turnaround: "7 to 18 days",
+        bestFor: "Funding-grade marketing sites, launch campaigns, flagship product reveals.",
       },
     ],
   },
   {
     id: "dev",
-    name: "WordPress Development",
+    name: "Development",
     shortName: "Dev only",
     description:
-      "You bring the design, we build it. Pixel-perfect, responsive, performant WordPress on the page builder of your choice.",
-    startsAt: "From $196",
-    bestFor: "Founders who already have a designer (or Figma file) and need a WordPress build with proper performance, on-page SEO, and CMS structure.",
+      "You bring the design, we build it. Pixel-perfect, responsive, properly fast. WordPress, Webflow, or Framer, your call.",
+    bestFor:
+      "Founders who already have a designer (or Figma file) and need a build that loads fast, ranks, and is easy for the team to update later.",
     tiers: [
       {
         id: "standard",
         name: "Standard",
         symbol: "⚡",
-        tagline: "Straightforward build · basic plugins",
-        rows: [
-          { label: "Single page", single: "$196", upTo5: "$560", fiveToTen: "$770", tenToFifteen: "$980", perPage: "$77 / page", turnaround: "3 to 5 days" },
+        tagline: "Straightforward build, basic plugins or components",
+        includes: [
+          "Faithful Figma-to-build implementation",
+          "Forms, analytics, and basic SEO",
+          "CMS for blog or simple collections",
+          "Launch on your hosting of choice",
         ],
+        turnaround: "3 to 10 days",
+        bestFor: "Marketing sites that need to ship now, not next quarter.",
       },
       {
         id: "premium",
         name: "Premium",
         symbol: "✦",
-        tagline: "Custom build · animations · CRM integrations",
+        tagline: "Custom build, animations, CRM and integrations",
         highlight: true,
-        rows: [
-          { label: "Single page", single: "$392", upTo5: "$1,190", fiveToTen: "$1,680", tenToFifteen: "$2,100", perPage: "$154 / page", turnaround: "5 to 7 days" },
+        includes: [
+          "Custom components, smooth interactions",
+          "HubSpot, Pipedrive, Salesforce, or your CRM",
+          "Member-gated content if needed",
+          "Performance and accessibility passes",
         ],
+        turnaround: "5 to 21 days",
+        bestFor: "Sites with real product depth: pricing, docs, comparison, gated demos.",
       },
       {
         id: "elite",
         name: "Elite",
         symbol: "♛",
-        tagline: "Complex build · GSAP animations · performance audit",
-        rows: [
-          { label: "Single page", single: "$700", upTo5: "$2,100", fiveToTen: "$2,940", tenToFifteen: "$3,710", perPage: "$280 / page", turnaround: "7 to 10 days" },
+        tagline: "Complex build, GSAP-grade motion, full performance audit",
+        includes: [
+          "Advanced animations and scroll work",
+          "Multilingual or multi-region setup",
+          "Full Core Web Vitals tuning",
+          "Custom CMS structures for product, careers, and resources",
         ],
+        turnaround: "10 to 28 days",
+        bestFor: "Sites that need to look and feel like a category leader, not a startup template.",
       },
     ],
   },
@@ -121,60 +140,95 @@ const packages: PackageDef[] = [
     name: "Design + Development",
     shortName: "Design + Dev",
     description:
-      "End-to-end. We design, we build, we ship. One brief, one team, one delivery. Bundle pricing applied automatically.",
-    startsAt: "From $392",
+      "End-to-end. We design, we build, we ship. One brief, one team, one delivery. The shape most founders pick.",
     badge: "Most popular",
-    bestFor: "Founders who want a single point of accountability for the whole site, and the best price-to-quality ratio across the three packages.",
+    bestFor:
+      "Founders who want a single point of accountability for the whole site, and don&apos;t want to hand designs across two vendors.",
     tiers: [
       {
         id: "standard",
         name: "Standard",
         symbol: "⚡",
-        tagline: "Template layout, straightforward build",
-        rows: [
-          { label: "Single page", single: "$392", upTo5: "$1,225", fiveToTen: "$1,610", tenToFifteen: "$2,030", perPage: "$168 / page", turnaround: "5 to 7 days" },
+        tagline: "Template-led design, straightforward build",
+        includes: [
+          "Standard tier design + standard tier build",
+          "Brand applied, content slotted in",
+          "Forms, analytics, SEO basics",
+          "Live in days, not months",
         ],
+        turnaround: "5 to 14 days",
+        bestFor: "First version of your AI SaaS site. Ship something credible, fast.",
       },
       {
         id: "premium",
         name: "Premium",
         symbol: "✦",
-        tagline: "Custom layout, custom build, animations",
+        tagline: "Custom design + custom build, with animations",
         highlight: true,
-        rows: [
-          { label: "Single page", single: "$784", upTo5: "$2,520", fiveToTen: "$3,430", tenToFifteen: "$4,270", perPage: "$336 / page", turnaround: "7 to 10 days" },
+        includes: [
+          "Premium tier design + premium tier build",
+          "Wireframes through to launch under one roof",
+          "CRM, marketing, and analytics wired up",
+          "Performance and SEO passes included",
         ],
+        turnaround: "7 to 21 days",
+        bestFor: "The version you actually run paid traffic to. Most founders pick this tier.",
       },
       {
         id: "elite",
         name: "Elite",
         symbol: "♛",
-        tagline: "Art direction, motion, complex build, performance pass",
-        rows: [
-          { label: "Single page", single: "$1,470", upTo5: "$4,690", fiveToTen: "$6,370", tenToFifteen: "$8,050", perPage: "$588 / page", turnaround: "10 to 14 days" },
+        tagline: "Art direction, motion, complex build, full performance pass",
+        includes: [
+          "Elite tier design + elite tier build",
+          "Brand book and motion guidelines",
+          "Multilingual, multi-region, multi-CMS",
+          "Launch support and post-launch tuning",
         ],
+        turnaround: "10 to 38 days",
+        bestFor: "Brand-defining sites. The one your investors and competitors will reference.",
       },
     ],
   },
 ];
 
-const includedBonuses = [
-  { label: "Competitor audit (3 sites)", value: "$250" },
-  { label: "Speed optimisation pass (Core Web Vitals)", value: "$200" },
-  { label: "Basic SEO setup (meta, alt tags, sitemap, schema)", value: "$300" },
-  { label: "Launch kit (checklist, walkthrough)", value: "$150" },
+const platforms = [
+  {
+    name: "WordPress",
+    tagline: "Builders that scale",
+    description:
+      "Elementor, DIVI, Bricks, Kadence, or Beaver Builder. Best when content velocity matters: blog, careers, docs, and pages that non-technical teammates update weekly.",
+  },
+  {
+    name: "Webflow",
+    tagline: "Visual-first, hosted",
+    description:
+      "When you want a marketing team to ship updates without involving engineering, but still need real CMS structure and clean code under the hood.",
+  },
+  {
+    name: "Framer",
+    tagline: "Design-led and fast",
+    description:
+      "When the design language is the product. Framer is our default for landing pages and high-fidelity launch sites where motion and craft are the point.",
+  },
 ];
 
 const everyProject = [
-  "Figma source files",
-  "Fully responsive design",
-  "2 revision rounds",
-  "Project management workspace",
-  "Dedicated Slack channel",
-  "Page builder of your choice (Elementor, DIVI, Bricks, Kadence, Beaver Builder)",
+  "Figma source files, handed over",
+  "Fully responsive: mobile, tablet, desktop",
+  "Two rounds of structured revisions",
+  "Project workspace and dedicated Slack channel",
+  "Hosting setup and DNS guidance, on the platform you pick",
+  "Competitor audit and basic on-page SEO included",
 ];
 
-export default function WebsitesPage() {
+const guaranteeBullets = [
+  "First deliverable not landing? We redo it from scratch.",
+  "Site live but not converting at category baseline? We refund.",
+  "Used twice across 460+ projects. Both founders are still with us.",
+];
+
+export default function WebsitePage() {
   const { openModal } = useCalendly();
   const [activePackage, setActivePackage] = useState<PackageDef["id"]>("bundle");
   const active = packages.find((p) => p.id === activePackage)!;
@@ -196,18 +250,18 @@ export default function WebsitesPage() {
                 Websites for AI SaaS founders
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 sm:mb-8 leading-[1.05] tracking-[-0.02em]">
-                Websites that make
+                A website that takes your AI product
                 <br />
-                <span className="gradient-text-modern inline-block mt-2">AI SaaS products credible.</span>
+                <span className="gradient-text-modern inline-block mt-2">as seriously as the tech.</span>
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-[1.6] max-w-3xl mx-auto">
-                Three tiers, fixed prices, predictable turnarounds. Whether you need a single landing page or a 15-page marketing site, you know what you&apos;re paying before we start.
+                Three tiers, three platforms, three engagement shapes. We design, build, and ship the kind of site AI founders actually need, on the CMS that fits how your team works.
               </p>
 
               {/* Hero stat strip */}
               <div className="grid grid-cols-3 max-w-2xl mx-auto mt-10 sm:mt-12 rounded-2xl bg-white/70 backdrop-blur-sm border border-gray-200/70 shadow-sm overflow-hidden divide-x divide-gray-200/70">
                 {[
-                  { value: "460+", label: "Websites delivered" },
+                  { value: "460+", label: "Sites delivered" },
                   { value: "4.9★", label: "Client satisfaction" },
                   { value: "0", label: "Missed deadlines" },
                 ].map((s, i) => (
@@ -229,27 +283,27 @@ export default function WebsitesPage() {
                 Why AI SaaS founders <span className="gradient-text-modern">pick us.</span>
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-[1.6]">
-                A different kind of website partner. No retainer trap, no scope-creep games, no Fiverr quality.
+                A different kind of website partner. No retainer trap, no scope-creep games, no agency-speak.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
               {[
                 {
-                  title: "Fixed price. Always.",
-                  body: "You pick a tier, you pick a page count. The price you see is the price you pay. No hourly billing, no surprise change orders.",
+                  title: "Built for AI SaaS.",
+                  body: "We design for buyers reviewing AI tools: founders, ops, IT. Trust signals, security cues, and product clarity baked in.",
                 },
                 {
-                  title: "Built for AI SaaS.",
-                  body: "We design for buyers reviewing AI tools (founders, ops, IT). Trust, security cues, and product clarity built in.",
+                  title: "Scoped, not hourly.",
+                  body: "Every engagement is fixed-scope. You know what's getting built, when it lands, and what triggers a change order.",
                 },
                 {
                   title: "Predictable timelines.",
-                  body: "Every tier has a stated turnaround. Most builds ship inside 2 weeks. Zero missed deadlines on 460+ projects.",
+                  body: "Each tier has a stated turnaround. Most builds ship inside two weeks. Zero missed deadlines on 460+ projects.",
                 },
                 {
                   title: "Your stack, your win.",
-                  body: "WordPress on the page builder of your choice, or Next.js if you prefer code-first. Source files always handed over.",
+                  body: "WordPress, Webflow, or Framer. Source files always handed over. No platform lock-in, no vendor leverage.",
                 },
               ].map((b, i) => (
                 <div
@@ -265,18 +319,53 @@ export default function WebsitesPage() {
           </div>
         </section>
 
-        {/* Three packages overview */}
+        {/* Platform flexibility */}
         <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 to-blue-50/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 sm:mb-14">
               <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs sm:text-sm font-semibold mb-5">
-                Three packages
+                Platform flexibility
+              </div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 tracking-[-0.02em] leading-[1.1] mb-4">
+                WordPress, Webflow, or Framer. <span className="gradient-text-modern">Your call.</span>
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-[1.6]">
+                We&apos;ll suggest the right platform on our discovery call based on how your team works. None of them are wrong, but the wrong one for your team is the one you&apos;ll fight with for years.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-5 sm:gap-6">
+              {platforms.map((p) => (
+                <div
+                  key={p.name}
+                  className="group relative bg-white p-7 sm:p-8 rounded-2xl border border-gray-200 hover:border-gray-300 transition-all duration-300 overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.12)]"
+                >
+                  <div className="absolute top-0 left-0 h-[3px] w-full bg-gradient-to-r from-blue-500 to-indigo-500 transform translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out" />
+                  <div className="relative z-10">
+                    <div className="flex items-baseline justify-between mb-3">
+                      <h3 className="text-2xl font-bold text-gray-900 tracking-[-0.01em]">{p.name}</h3>
+                      <span className="text-[10px] font-mono uppercase tracking-[0.22em] text-gray-400">{p.tagline}</span>
+                    </div>
+                    <p className="text-[15px] text-gray-600 leading-[1.7]">{p.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Three packages overview */}
+        <section className="py-16 sm:py-20 lg:py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12 sm:mb-14">
+              <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs sm:text-sm font-semibold mb-5">
+                Three engagement shapes
               </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 tracking-[-0.02em] leading-[1.1] mb-4">
                 Pick how much of the build <span className="gradient-text-modern">you want us to handle.</span>
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-[1.6]">
-                Design only, WordPress development only, or the full thing end-to-end.
+                Design only, development only, or the full thing end-to-end.
               </p>
             </div>
 
@@ -286,7 +375,7 @@ export default function WebsitesPage() {
                   key={p.id}
                   onClick={() => {
                     setActivePackage(p.id);
-                    document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth", block: "start" });
+                    document.getElementById("tiers")?.scrollIntoView({ behavior: "smooth", block: "start" });
                   }}
                   className={`group relative text-left rounded-2xl border-2 p-7 sm:p-8 transition-all duration-300 overflow-hidden ${
                     p.id === "bundle"
@@ -295,32 +384,50 @@ export default function WebsitesPage() {
                   }`}
                 >
                   {p.badge && (
-                    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] mb-4 ${p.id === "bundle" ? "bg-white/15 text-white" : "bg-blue-100 text-blue-700"}`}>
+                    <span
+                      className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] mb-4 ${
+                        p.id === "bundle" ? "bg-white/15 text-white" : "bg-blue-100 text-blue-700"
+                      }`}
+                    >
                       <span className={`w-1 h-1 rounded-full ${p.id === "bundle" ? "bg-cyan-300" : "bg-blue-600"}`} />
                       {p.badge}
                     </span>
                   )}
-                  <h3 className={`text-2xl sm:text-[26px] font-bold leading-[1.2] mb-2 tracking-[-0.01em] ${p.id === "bundle" ? "text-white" : "text-gray-900"}`}>
+                  <h3
+                    className={`text-2xl sm:text-[26px] font-bold leading-[1.2] mb-3 tracking-[-0.01em] ${
+                      p.id === "bundle" ? "text-white" : "text-gray-900"
+                    }`}
+                  >
                     {p.name}
                   </h3>
-                  <p className={`text-[15px] leading-[1.65] mb-5 ${p.id === "bundle" ? "text-blue-50/90" : "text-gray-600"}`}>
+                  <p className={`text-[15px] leading-[1.65] ${p.id === "bundle" ? "text-blue-50/90" : "text-gray-600"}`}>
                     {p.description}
                   </p>
-                  <div className={`text-2xl sm:text-3xl font-bold mb-1 ${p.id === "bundle" ? "text-white" : "text-blue-600"}`}>
-                    {p.startsAt}
-                  </div>
-                  <div className={`text-xs ${p.id === "bundle" ? "text-blue-100/70" : "text-gray-500"}`}>per project, fixed</div>
                   <div className={`mt-6 pt-5 border-t ${p.id === "bundle" ? "border-white/15" : "border-gray-100"}`}>
-                    <div className={`text-[10px] font-mono uppercase tracking-[0.22em] mb-2 ${p.id === "bundle" ? "text-cyan-200" : "text-gray-400"}`}>
+                    <div
+                      className={`text-[10px] font-mono uppercase tracking-[0.22em] mb-2 ${
+                        p.id === "bundle" ? "text-cyan-200" : "text-gray-400"
+                      }`}
+                    >
                       Best for
                     </div>
-                    <div className={`text-sm leading-[1.6] ${p.id === "bundle" ? "text-blue-50/80" : "text-gray-600"}`}>
-                      {p.bestFor}
-                    </div>
+                    <p
+                      className={`text-sm leading-[1.6] ${p.id === "bundle" ? "text-blue-50/80" : "text-gray-600"}`}
+                      dangerouslySetInnerHTML={{ __html: p.bestFor }}
+                    />
                   </div>
-                  <div className={`mt-6 inline-flex items-center gap-1.5 text-sm font-semibold ${p.id === "bundle" ? "text-white" : "text-blue-600"}`}>
-                    See full pricing
-                    <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div
+                    className={`mt-6 inline-flex items-center gap-1.5 text-sm font-semibold ${
+                      p.id === "bundle" ? "text-white" : "text-blue-600"
+                    }`}
+                  >
+                    See tier breakdown
+                    <svg
+                      className="w-4 h-4 group-hover:translate-x-0.5 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </div>
@@ -330,31 +437,31 @@ export default function WebsitesPage() {
           </div>
         </section>
 
-        {/* Pricing tables */}
-        <section id="pricing" className="py-16 sm:py-20 lg:py-24 bg-white">
+        {/* Tier breakdown */}
+        <section id="tiers" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 to-blue-50/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10 sm:mb-12">
               <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs sm:text-sm font-semibold mb-5">
-                Pricing
+                Tier breakdown
               </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 tracking-[-0.02em] leading-[1.1] mb-4">
-                Three tiers, four page counts. <span className="gradient-text-modern">No quotes needed.</span>
+                Three tiers, three depths of craft.
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-[1.6]">
-                Pick a tier based on how custom you want it. Pick a page count. The price is the price.
+                Pick a tier based on how custom you want it. We&apos;ll quote the build on the discovery call once we know the scope.
               </p>
             </div>
 
             {/* Package tabs */}
             <div className="flex justify-center mb-10 sm:mb-12">
-              <div className="inline-flex rounded-full bg-gray-100 p-1.5 border border-gray-200">
+              <div className="inline-flex rounded-full bg-white p-1.5 border border-gray-200 shadow-sm">
                 {packages.map((p) => (
                   <button
                     key={p.id}
                     onClick={() => setActivePackage(p.id)}
                     className={`px-4 sm:px-5 py-2 text-sm font-semibold rounded-full transition-all duration-200 ${
                       activePackage === p.id
-                        ? "bg-white text-blue-700 shadow-sm border border-gray-200"
+                        ? "bg-blue-600 text-white shadow-sm"
                         : "text-gray-600 hover:text-gray-900"
                     }`}
                   >
@@ -364,19 +471,19 @@ export default function WebsitesPage() {
               </div>
             </div>
 
-            {/* Active package pricing grid */}
+            {/* Active package tiers */}
             <div className="grid md:grid-cols-3 gap-5 sm:gap-6">
               {active.tiers.map((tier) => (
                 <div
                   key={tier.id}
-                  className={`relative rounded-3xl p-7 sm:p-8 transition-all duration-300 ${
+                  className={`relative rounded-3xl p-7 sm:p-8 transition-all duration-300 flex flex-col ${
                     tier.highlight
                       ? "bg-gradient-to-br from-blue-700 via-blue-700 to-indigo-700 text-white border-2 border-blue-600 shadow-2xl shadow-blue-600/25 scale-[1.02]"
                       : "bg-white border-2 border-gray-200 hover:border-gray-300 shadow-sm"
                   }`}
                 >
                   {tier.highlight && (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-blue-700 text-[10px] font-bold uppercase tracking-[0.18em] shadow-lg">
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-blue-700 text-[10px] font-bold uppercase tracking-[0.18em] shadow-lg whitespace-nowrap">
                       <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
                       Most picked
                     </span>
@@ -390,42 +497,42 @@ export default function WebsitesPage() {
                     {tier.tagline}
                   </p>
 
-                  {tier.rows.map((row) => (
-                    <div key={row.label} className="space-y-3.5">
-                      {[
-                        { label: "Single page", value: row.single, turn: row.turnaround },
-                        { label: "Up to 5 pages", value: row.upTo5 },
-                        { label: "5 to 10 pages", value: row.fiveToTen },
-                        { label: "10 to 15 pages", value: row.tenToFifteen },
-                      ].map((line, i) => (
-                        <div
-                          key={i}
-                          className={`flex items-baseline justify-between gap-3 pb-3 ${
-                            i === 3 ? "" : "border-b"
-                          } ${tier.highlight ? "border-white/15" : "border-gray-100"}`}
+                  <ul className="space-y-3 mb-7 flex-1">
+                    {tier.includes.map((item, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <svg
+                          className={`w-5 h-5 mt-0.5 flex-shrink-0 ${
+                            tier.highlight ? "text-cyan-200" : "text-emerald-500"
+                          }`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
                         >
-                          <span className={`text-sm ${tier.highlight ? "text-blue-50/90" : "text-gray-600"}`}>{line.label}</span>
-                          <span className={`text-base font-bold ${tier.highlight ? "text-white" : "text-gray-900"}`}>{line.value}</span>
-                        </div>
-                      ))}
-                      {row.perPage && (
-                        <div className={`flex items-baseline justify-between gap-3 pt-1`}>
-                          <span className={`text-xs ${tier.highlight ? "text-blue-100/70" : "text-gray-500"}`}>15+ pages</span>
-                          <span className={`text-sm font-semibold ${tier.highlight ? "text-cyan-200" : "text-blue-600"}`}>{row.perPage}</span>
-                        </div>
-                      )}
-                    </div>
-                  ))}
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className={`text-[14px] leading-[1.55] ${tier.highlight ? "text-blue-50" : "text-gray-700"}`}>
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
 
-                  <div className={`mt-7 pt-5 border-t ${tier.highlight ? "border-white/15" : "border-gray-100"}`}>
-                    <div className="flex items-center justify-between gap-3">
-                      <div className={`text-[10px] font-mono uppercase tracking-[0.22em] ${tier.highlight ? "text-cyan-200" : "text-gray-400"}`}>
+                  <div className={`pt-5 border-t ${tier.highlight ? "border-white/15" : "border-gray-100"}`}>
+                    <div className="flex items-center justify-between gap-3 mb-3">
+                      <div
+                        className={`text-[10px] font-mono uppercase tracking-[0.22em] ${
+                          tier.highlight ? "text-cyan-200" : "text-gray-400"
+                        }`}
+                      >
                         Turnaround
                       </div>
                       <div className={`text-sm font-semibold ${tier.highlight ? "text-white" : "text-gray-900"}`}>
-                        {active.tiers.find((t) => t.id === tier.id)?.rows[0]?.turnaround}
+                        {tier.turnaround}
                       </div>
                     </div>
+                    <p className={`text-xs leading-[1.6] ${tier.highlight ? "text-blue-100/80" : "text-gray-500"}`}>
+                      {tier.bestFor}
+                    </p>
                   </div>
 
                   <button
@@ -436,16 +543,58 @@ export default function WebsitesPage() {
                         : "bg-gray-900 text-white hover:bg-gray-800"
                     }`}
                   >
-                    Start a {tier.name.toLowerCase()} build
+                    Scope a {tier.name.toLowerCase()} build
                   </button>
                 </div>
               ))}
             </div>
 
-            {/* Note */}
-            <p className="text-center text-sm text-gray-500 mt-8 max-w-3xl mx-auto leading-[1.6]">
-              All prices in USD. Page counts include all unique templates (home, features, pricing, about, blog index, etc). Blog post and case study templates count once.
-            </p>
+            {/* Custom-quote callout */}
+            <div className="max-w-4xl mx-auto mt-12 sm:mt-14 rounded-2xl border border-gray-200 bg-white p-6 sm:p-7 text-center shadow-sm">
+              <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-blue-600 mb-2">
+                Pricing
+              </div>
+              <p className="text-base sm:text-lg text-gray-700 leading-[1.7] max-w-2xl mx-auto">
+                Every project is scoped and priced individually based on tier, page count, platform, and what you need launched. We&apos;ll quote the full build on the discovery call, in writing, before you commit a cent.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Whats included */}
+        <section className="py-16 sm:py-20 lg:py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-16 items-start">
+              <div>
+                <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 text-xs sm:text-sm font-semibold mb-5">
+                  What every project includes
+                </div>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-[-0.02em] leading-[1.1] mb-5">
+                  The boring things, <span className="gradient-text-modern">handled.</span>
+                </h2>
+                <p className="text-lg text-gray-600 leading-[1.65]">
+                  Things most studios upcharge for or quietly skip. We bundle them in by default because a website without them isn&apos;t a finished website.
+                </p>
+              </div>
+
+              <div className="rounded-3xl border border-gray-200 bg-gradient-to-br from-blue-50/40 to-indigo-50/40 p-7 sm:p-9">
+                <ul className="space-y-3.5">
+                  {everyProject.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-[15px] text-gray-700 leading-[1.6]">
+                      <svg
+                        className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -457,12 +606,11 @@ export default function WebsitesPage() {
                 Optional <span className="gradient-text-modern">add-ons.</span>
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-[1.6]">
-                Bundle in copy or maintenance, or add later. Same fixed-price logic.
+                Bundle in copy or ongoing maintenance, or add later. Quoted with the rest of the project.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-5 sm:gap-6 max-w-5xl mx-auto">
-              {/* Copywriting */}
               <article className="bg-white rounded-2xl border border-gray-200 p-7 sm:p-9">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white flex items-center justify-center">
@@ -472,30 +620,11 @@ export default function WebsitesPage() {
                   </span>
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Copywriting</h3>
                 </div>
-                <p className="text-[15px] text-gray-600 leading-[1.7] mb-6">
-                  Conversion-focused copy written for AI SaaS buyers. Hero, sub-hero, features, social proof, FAQs, and the CTAs that actually convert.
+                <p className="text-[15px] text-gray-600 leading-[1.7]">
+                  Conversion-focused copy written for AI SaaS buyers. Hero, sub-hero, features, social proof, FAQs, and the CTAs that actually convert. Rolled into the project quote or scoped standalone.
                 </p>
-                <div className="space-y-3 text-sm">
-                  {[
-                    { label: "Single page", price: "$140", turn: "1 to 2 days" },
-                    { label: "Up to 5 pages", price: "$420", turn: "3 to 4 days" },
-                    { label: "5 to 10 pages", price: "$560", turn: "5 to 7 days" },
-                    { label: "10 to 15 pages", price: "$700", turn: "7 to 10 days" },
-                    { label: "15+ pages", price: "$56 / page", turn: "" },
-                  ].map((row, i) => (
-                    <div
-                      key={i}
-                      className={`grid grid-cols-[1fr_auto_auto] gap-4 items-baseline pb-3 ${i === 4 ? "" : "border-b border-gray-100"}`}
-                    >
-                      <span className="text-gray-600">{row.label}</span>
-                      <span className="font-bold text-gray-900">{row.price}</span>
-                      <span className="text-xs text-gray-400 min-w-[80px] text-right">{row.turn}</span>
-                    </div>
-                  ))}
-                </div>
               </article>
 
-              {/* Maintenance */}
               <article className="bg-white rounded-2xl border border-gray-200 p-7 sm:p-9">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 text-white flex items-center justify-center">
@@ -506,84 +635,16 @@ export default function WebsitesPage() {
                   </span>
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Maintenance</h3>
                 </div>
-                <p className="text-[15px] text-gray-600 leading-[1.7] mb-6">
-                  Once your site is live, we keep it that way. WordPress + plugin updates, weekly backups, uptime monitoring, security and performance scans, plus a monthly report and 5 change requests.
+                <p className="text-[15px] text-gray-600 leading-[1.7]">
+                  Once your site is live, we keep it that way. Platform and plugin updates, weekly backups, uptime monitoring, security and performance scans, plus a monthly report and a fixed number of change requests. Optional, monthly.
                 </p>
-                <div className="rounded-xl border border-gray-200 bg-gray-50 p-5">
-                  <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-gray-400 mb-1.5">Monthly retainer</div>
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-3xl font-bold text-gray-900">$170</span>
-                    <span className="text-sm text-gray-500">/ month</span>
-                  </div>
-                  <ul className="mt-5 space-y-2 text-sm text-gray-700">
-                    {[
-                      "WordPress + plugin updates",
-                      "Weekly backups",
-                      "Uptime + security monitoring",
-                      "Monthly performance report",
-                      "5 change requests / month",
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <svg className="w-4 h-4 text-emerald-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
               </article>
             </div>
           </div>
         </section>
 
-        {/* Free with every project */}
-        <section className="py-16 sm:py-20 lg:py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-16 items-start">
-              <div>
-                <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 text-xs sm:text-sm font-semibold mb-5">
-                  Free with every project
-                </div>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-[-0.02em] leading-[1.1] mb-5">
-                  $900 of bonuses, <span className="gradient-text-modern">on every build.</span>
-                </h2>
-                <p className="text-lg text-gray-600 leading-[1.65] mb-7">
-                  Things most agencies upcharge for. We bundle them in by default because a website that loads slow, has bad meta tags, or no launch checklist isn&apos;t a finished website.
-                </p>
-                <ul className="space-y-3">
-                  {everyProject.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-[15px] text-gray-700 leading-[1.6]">
-                      <svg className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="rounded-3xl border border-gray-200 bg-gradient-to-br from-blue-50/40 to-indigo-50/40 p-7 sm:p-9">
-                <div className="text-[11px] font-mono uppercase tracking-[0.22em] text-blue-700 mb-5">Bonus value</div>
-                <ul className="divide-y divide-gray-200">
-                  {includedBonuses.map((b, i) => (
-                    <li key={i} className="flex items-center justify-between gap-3 py-3.5">
-                      <span className="text-[15px] text-gray-700 leading-[1.5]">{b.label}</span>
-                      <span className="text-sm font-bold text-gray-900 whitespace-nowrap">{b.value}</span>
-                    </li>
-                  ))}
-                  <li className="flex items-center justify-between gap-3 py-4 mt-1">
-                    <span className="text-base font-bold text-gray-900">Total bonus value</span>
-                    <span className="text-2xl font-bold gradient-text-modern">$900</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Guarantee */}
-        <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 to-blue-50/30">
+        <section className="py-16 sm:py-20 lg:py-24 bg-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="rounded-3xl bg-white border border-gray-200 shadow-[0_30px_80px_-25px_rgba(0,0,0,0.18)] overflow-hidden">
               <div className="grid lg:grid-cols-[auto_1fr]">
@@ -599,14 +660,21 @@ export default function WebsitesPage() {
                   </div>
                 </div>
                 <div className="p-8 sm:p-10 flex items-center">
-                  <div>
-                    <p className="text-base sm:text-lg text-gray-700 leading-[1.7] mb-4">
-                      Not happy with the first deliverable? We redo it from scratch, free. If the launched site doesn&apos;t convert at the industry baseline for your category, we issue a full refund. No questions.
-                    </p>
-                    <p className="text-sm text-gray-500 leading-[1.6]">
-                      We&apos;ve delivered 460+ projects and used this guarantee exactly twice. Both clients are still with us today.
-                    </p>
-                  </div>
+                  <ul className="space-y-3.5">
+                    {guaranteeBullets.map((b, i) => (
+                      <li key={i} className="flex items-start gap-3 text-[15px] sm:text-base text-gray-700 leading-[1.65]">
+                        <svg
+                          className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>
@@ -620,7 +688,7 @@ export default function WebsitesPage() {
               Ready to brief your website?
             </h2>
             <p className="text-lg sm:text-xl text-blue-100 mb-10 leading-[1.6] max-w-2xl mx-auto">
-              30 minutes, no pitch. Tell us about your AI SaaS, what pages you need, and we&apos;ll quote on the call.
+              30 minutes, no pitch. Tell us about your AI SaaS, what pages you need, and we&apos;ll quote the full build on the call.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button

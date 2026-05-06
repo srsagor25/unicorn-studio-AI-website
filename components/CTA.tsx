@@ -4,43 +4,38 @@ import { useState } from "react";
 import { useCalendly } from "./CalendlyProvider";
 
 const SERVICES = [
-  "AI Business Process Automation",
-  "AI Marketing System",
-  "AI Sales System",
-  "AI Communication Automation",
-  "AI Solution / Custom AI Product",
-  "SaaS Product",
-  "Mobile App",
+  "AI Systems",
+  "AI Integrations",
+  "AI Solutions",
+  "AI SaaS",
   "Website",
   "Branding",
   "Not sure yet",
 ];
 
-const BUDGETS = [
-  "Under $10K",
-  "$10K – $25K",
-  "$25K – $50K",
-  "$50K – $100K",
-  "$100K+",
-  "Not sure yet",
+const TIMELINES = [
+  "Yesterday",
+  "Within the next month",
+  "Next quarter",
+  "Just exploring",
 ];
 
 export default function CTA() {
   const { openModal } = useCalendly();
   const [service, setService] = useState("");
-  const [budget, setBudget] = useState("");
+  const [timeline, setTimeline] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = `New inquiry${service ? ` — ${service}` : ""}`;
+    const subject = `New inquiry${service ? `, ${service}` : ""}`;
     const lines = [
       `Name: ${name || "(not provided)"}`,
       `Email: ${email || "(not provided)"}`,
       `Service: ${service || "(not selected)"}`,
-      `Budget: ${budget || "(not selected)"}`,
+      `Timeline: ${timeline || "(not selected)"}`,
       "",
       "Project notes:",
       message || "(none)",
@@ -178,28 +173,28 @@ export default function CTA() {
                 </div>
               </div>
 
-              {/* Budget */}
+              {/* Timeline */}
               <div>
                 <label
-                  htmlFor="cta-budget"
+                  htmlFor="cta-timeline"
                   className="block text-sm font-semibold text-gray-900 mb-2"
                 >
-                  What&apos;s your budget?
+                  When do you need it?
                 </label>
                 <div className="relative">
                   <select
-                    id="cta-budget"
-                    value={budget}
-                    onChange={(e) => setBudget(e.target.value)}
+                    id="cta-timeline"
+                    value={timeline}
+                    onChange={(e) => setTimeline(e.target.value)}
                     className="appearance-none w-full px-4 py-3.5 pr-10 rounded-xl border border-gray-300 bg-white text-gray-900 text-[15px] font-medium hover:border-gray-400 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none transition-colors cursor-pointer"
                     required
                   >
                     <option value="" disabled>
-                      Select a range…
+                      Select a timeline…
                     </option>
-                    {BUDGETS.map((b) => (
-                      <option key={b} value={b}>
-                        {b}
+                    {TIMELINES.map((t) => (
+                      <option key={t} value={t}>
+                        {t}
                       </option>
                     ))}
                   </select>

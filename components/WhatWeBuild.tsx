@@ -36,11 +36,11 @@ export default function WhatWeBuild() {
       linkText: "Explore AI SaaS"
     },
     {
-      name: "Websites",
+      name: "Website",
       category: "Web",
-      description: "Conversion-focused websites built specifically for AI SaaS founders. Three tiers, fixed prices, fast turnarounds. From a single landing page to a full marketing and product site.",
+      description: "Conversion-focused websites built for AI SaaS founders. WordPress, Webflow, or Framer, your call. From a single landing page to a full marketing and product site.",
       link: "/websites",
-      linkText: "Explore Websites"
+      linkText: "Explore Website"
     },
     {
       name: "Branding",
